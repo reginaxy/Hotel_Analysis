@@ -60,7 +60,7 @@ def main():
                  "3. Topic Modelling to discover the most talked topics in the reviews data.\n")
         
         st.header("Data Pipeline")
-        image = Image.open("/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Images/Data Pipeline.png")
+        image = Image.open("streamlit_template/Data Pipeline.png")
         st.image(image, caption='Data Pipeline')
         
         st.header("Dataset Overview")
@@ -114,7 +114,7 @@ def main():
         
         st.write("Sentiment analysis (also known as opinion mining) is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
         Sentiment analysis is frequently used on textual data to assist organisations in tracking brand and product sentiment in consumer feedback and better understanding customer demands.")
-        image = Image.open("/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Images/SA.png")
+        image = Image.open("streamlit_template/SA.png")
         st.image(image, caption='Sentiment Analysis')
         
         with st.expander("Definition of CountVectorizer (CV) & Term frequency-inverse document frequency (TF-IDF)"):
@@ -131,17 +131,17 @@ def main():
           """)
 
           st.write("When the two texts are converted into count frequency using **CountVectorizer**, the output will be as follows:- ")
-          image = Image.open("/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Images/CV output.png")
+          image = Image.open("streamlit_template/CV output.png")
           st.image(image, caption='CV')
 
           st.write("On the other hand, the above two texts can be also be converted into term frequency-inverse document frequency using **TFIDF**. The output will be as follows:- ")
-          image = Image.open("/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Images/TFIDF.png")
+          image = Image.open("streamlit_template/TFIDF.png")
           st.image(image, caption='TF-IDF')
 
           st.write("Reference: https://www.linkedin.com/pulse/count-vectorizers-vs-tfidf-natural-language-processing-sheel-saket/")
 
       elif sent_choice == 'Sentiment Analysis Results':
-        image = Image.open("/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Images/Sent Analysis.png")
+        image = Image.open("streamlit_template/Sent Analysis.png")
         st.image(image, caption='Sentiment Analysis (Results Obtained)')
 
         st.subheader("Explanation")
@@ -154,7 +154,7 @@ def main():
         if sent_choice == "Sentiment Classifier":
             # Sentiment Classification
               st.header("Sentiment Classification")
-              sent_model = pickle.load(open('/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Sentiment Analysis/Sentiment Models/LR_SentAnalysis.sav' , 'rb'))
+              sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
               user_input = st.text_area("Enter a review", "i loved the trip!")
               if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
@@ -168,7 +168,7 @@ def main():
         
         elif sent_choice == "Sentiment Model Results":
             data = load_data_cleaned()
-            sent_model = pickle.load(open('/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Sentiment Analysis/Sentiment Models/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
+            sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
             
             # Defining predictor & Target variable
             X = data['cleaned_Reviews'] # predictor variable
@@ -257,7 +257,7 @@ def main():
 
               
     elif page == "Topic Modelling":
-      lda_model = gensim.models.ldamodel.LdaModel.load('/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Topic Modelling/Topic Models/LDAmallet_NOUNS')
+      lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
       # Show Topics
       st.title("Topic Modelling 💬")
       topic_choice = st.selectbox("Choose one:", ["What is Topic Modelling?", "Topic Modelling Results"])
@@ -276,7 +276,7 @@ def main():
           1. Documents are made up of a variety of subjects (mixture of topics)\n
           2. Each topic are made up of a number of tokens (or words) 
           """)
-       image = Image.open("/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Images/LDA-algorithm.png")
+       image = Image.open("streamlit_template/LDA-algorithm.png")
        st.image(image, caption='LDA Algorithm')
        st.write("""
           Reference:\n
@@ -293,7 +293,7 @@ def main():
        
        
       elif topic_choice == "Topic Modelling Results":
-        image = Image.open("/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Images/Topic Model.png")
+        image = Image.open("streamlit_template/Topic Model.png")
         st.image(image, caption='Topic Modelling (Results Obtained)')
 
         st.subheader("Explanation")
@@ -374,17 +374,17 @@ def main():
        
 @st.cache
 def load_data_ori():
-    path = '/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Hotel_Datasets/515k_Hotel_Reviews.csv'
+    path = 'streamlit_template/515k_Hotel_Reviews.csv'
     df = pd.read_csv(path)
     return df
 
 def load_data_cleaned():
-    path = '/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Hotel_Datasets/515k_Hotel_Reviews_SENTIMENTS_40tokens.csv'
+    path = 'streamlit_template/515k_Hotel_Reviews_SENTIMENTS_40tokens.csv'
     df_clean = pd.read_csv(path)
     return df_clean
 
 def load_data_topics():
-    path = '/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Hotel_Datasets/515k_Hotel_Reviews_TOPIC_DISTRIBUTION.csv'
+    path = 'streamlit_template/515k_Hotel_Reviews_TOPIC_DISTRIBUTION.csv'
     df_topic = pd.read_csv(path)
     return df_topic
 
