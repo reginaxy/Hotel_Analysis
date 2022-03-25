@@ -25,7 +25,7 @@ def main():
                  "3. Topic Modelling to discover the most talked topics in the reviews data.\n")
         
         st.header("Data Pipeline")
-        image = Image.open("streamlit template/Data Pipeline.png")
+        image = Image.open("streamlit_template/Data Pipeline.png")
         st.image(image, caption='Data Pipeline')
 
 
@@ -43,7 +43,7 @@ def main():
         
             # Sentiment Classification
       st.header("Sentiment Classification")
-      sent_model = pickle.load(open('streamlit template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
+      sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       user_input = st.text_area("Enter a review", "i loved the trip!")
       if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
@@ -57,7 +57,7 @@ def main():
 
               
     elif page == "Topic Modelling":
-      lda_model = gensim.models.ldamodel.LdaModel.load('streamlit template/LDAmallet_NOUNS')
+      lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
       # Show Topics
       st.title("Topic Modelling 💬")
       st.header("Topic Keywords")
