@@ -1,39 +1,11 @@
 import streamlit as st
-import pandas as pd
-
-import seaborn as sns
-import matplotlib.pyplot as plt
-from matplotlib import pyplot
-import numpy as np
-
-from wordcloud import WordCloud, STOPWORDS
 import pickle
-
-import nltk
-nltk.download('punkt')
-from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-import string
-from textblob import TextBlob
-
-import streamlit.components.v1 as components
-from streamlit import components
-
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-from sklearn.metrics import PrecisionRecallDisplay
-from sklearn.metrics import confusion_matrix, classification_report, accuracy_score, f1_score
 
 import gensim
 from gensim import corpora
+from wordcloud import WordCloud, STOPWORDS
 
 from PIL import Image
-
-seed = 4353
-
 
 def main():
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -53,7 +25,7 @@ def main():
                  "3. Topic Modelling to discover the most talked topics in the reviews data.\n")
         
         st.header("Data Pipeline")
-        image = Image.open("/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Images/Data Pipeline.png")
+        image = Image.open("streamlit template/Data Pipeline.png")
         st.image(image, caption='Data Pipeline')
 
 
@@ -71,7 +43,7 @@ def main():
         
             # Sentiment Classification
       st.header("Sentiment Classification")
-      sent_model = pickle.load(open('/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Sentiment Analysis/Sentiment Models/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
+      sent_model = pickle.load(open('streamlit template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       user_input = st.text_area("Enter a review", "i loved the trip!")
       if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
@@ -85,7 +57,7 @@ def main():
 
               
     elif page == "Topic Modelling":
-      lda_model = gensim.models.ldamodel.LdaModel.load('/content/drive/MyDrive/Colab Notebooks/Hotel_Analysis/Topic Modelling/Topic Models/LDAmallet_NOUNS')
+      lda_model = gensim.models.ldamodel.LdaModel.load('streamlit template/LDAmallet_NOUNS')
       # Show Topics
       st.title("Topic Modelling 💬")
       st.header("Topic Keywords")
