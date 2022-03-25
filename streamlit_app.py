@@ -81,7 +81,7 @@ def main():
           st.write("""
           In short, **topic modelling** is a text mining approach to find common subjects in texts. \
           Topic modelling can connect words with similar meanings together, \
-          and distinguish between usage of words with numerous meanings by assigning them to different topics. \
+          and distinguish between usage of words with numerous meanings by assigning them to different topics. \n
           
           The main **disadvantage** of topic modelling is the need for humans to interpret the topics themselves. \
           Although the model will display the keywords present in each specific topic, humans will still need to identify the most important keywords in each topic, \
