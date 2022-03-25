@@ -87,7 +87,7 @@ def main():
           Although the model will display the keywords present in each specific topic, humans will still need to identify the most important keywords in each topic, \
           then make logical and reasonable inferences based on the keywords identified.\n
  
-          Upon interpreting the keywords in each topic, the Top 10 most mentioned topics were identified, as follows: \n
+          Upon observing the keywords in all the topics, the Top 10 most mentioned subjects in the reviews were identified, as follows: \n
           1. **Room view related** - Keywords: view, balcony, window\n
 
           2. **Room size / Comfort related** - Keywords: bed, comfy, cozy, cosy, pillow, mattress, uncomfort, size, space, family, luxury, twin, executive\n
