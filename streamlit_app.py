@@ -79,9 +79,15 @@ def main():
 
       with st.expander("Topics Identified"):
           st.write("""
-          The main **disadvantage** of topic modelling is the need to interpret the topics ourselves. \
-          Although the model will display us the keywords present in the specific topic, we still need to identify the keywords in each topic, then make our inferences based on the topic words.\n
-          Upon interpreting the keywords in each topic, 10 most mentioned topics were identified, as follows: \n
+          In short, **topic modelling** is a text mining approach to find common subjects in texts. \
+          Topic modelling can connect words with similar meanings together, \
+          and distinguish between usage of words with numerous meanings by assigning them to different topics. \
+          
+          The main **disadvantage** of topic modelling is the need for humans to interpret the topics themselves. \
+          Although the model will display the keywords present in each specific topic, humans will still need to identify the most important keywords in each topic, \
+          then make logical and reasonable inferences based on the keywords identified.\n
+ 
+          Upon interpreting the keywords in each topic, the Top 10 most mentioned topics were identified, as follows: \n
           1. **Room view related** - Keywords: view, balcony, window\n
 
           2. **Room size / Comfort related** - Keywords: bed, comfy, cozy, cosy, pillow, mattress, uncomfort, size, space, family, luxury, twin, executive\n
