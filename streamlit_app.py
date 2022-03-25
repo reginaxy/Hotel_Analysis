@@ -1,6 +1,9 @@
 import streamlit as st
 import pickle
 
+from matplotlib import pyplot
+import matplotlib.pyplot as plt
+
 import gensim
 from gensim import corpora
 from wordcloud import WordCloud, STOPWORDS
