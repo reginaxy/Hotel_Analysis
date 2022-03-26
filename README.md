@@ -1,7 +1,5 @@
 # Hotel_Analysis
 
-The purpose of this project is to perform an analysis on a European Luxury Hotel Reviews dataset.
-
 Data Source: https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe
 
 Deliverables of the project: -
