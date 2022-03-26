@@ -22,10 +22,11 @@ def main():
     if page == "Homepage":
         st.title("Objectives of the project")
         st.write("The purpose of this project is to perform an analysis on a European Luxury Hotel Reviews dataset.")
+        st.write("**Data Source:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
         st.write("**Deliverables of the project: -**")
         st.write("1. An interactive Power BI Dashboard to visualize useful findings from the dataset. \n"
-                 "2. Sentiment Analysis on the reviews data, including a Sentiment Classification Model using a suitable Machine Learning (ML) Algorithm. \n"
-                 "3. Topic Modelling to discover the most talked topics in the reviews data.\n")
+                 "2. Sentiment Analysis on the customer reviews, including a Sentiment Classification Model using a suitable Machine Learning (ML) Algorithm. \n"
+                 "3. Topic Modelling to discover the most talked topics in the customer reviews.\n")
         
         st.header("Data Pipeline")
         image = Image.open("streamlit_template/Data Pipeline.png")
@@ -34,10 +35,7 @@ def main():
 
     elif page == "Power BI Dashboard":
         st.title("Power BI Dashboard 📊")
-        with st.expander("See details"):
-          st.write("**Page 1: Overview of European Hotels** - Have a closer look at where each hotel is located at, scores that the hotels received from their reviewers, as well as get a better idea of each hotel's popular visitor types etc.")
-          st.write("**Page 2: Hotel Reviewer Analysis** - Have a closer look at the best and worst hotels in Europe.")
-          st.write("**Page 3: Sentiment Analysis** - Have a closer look at the most mentioned negative and positive words in the reviews and the sentiment counts of each hotel.")
+        st.title("Original Dashboard Link:https://app.powerbi.com/view?r=eyJrIjoiZWViNWE4N2YtZmM0OS00MzFkLTk0MDgtMDdlOTZhMTc4NGY0IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection")
         st.markdown('<iframe title="Hotel (Web version)" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiZWViNWE4N2YtZmM0OS00MzFkLTk0MDgtMDdlOTZhMTc4NGY0IiwidCI6IjBmZWQw\
         M2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)
 
@@ -47,7 +45,7 @@ def main():
             # Sentiment Classification
       st.header("Sentiment Classification")
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
-      user_input = st.text_area("Enter a review", "i loved the trip!")
+      user_input = st.text_area("Enter a review", "I loved the trip!")
       if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
                   b = sent_model.predict_proba([user_input])[0]
@@ -79,7 +77,7 @@ def main():
 
       with st.expander("Topics Identified"):
           st.write("""
-          In short, **topic modelling** is a text mining approach to find common subjects in texts. \
+          In short, **Topic Modelling** is a text mining approach to find common subjects in texts. \
           Topic modelling can connect words with similar meanings together, \
           and distinguish between usage of words with numerous meanings by assigning them to different topics. \n
           
@@ -87,12 +85,13 @@ def main():
           Although the model will display the keywords present in each specific topic, humans will still need to identify the most important keywords in each topic, \
           then make logical and reasonable inferences based on the keywords identified.\n
  
-          Upon observing the keywords in all the topics, the Top 10 most mentioned subjects in the reviews were identified, as follows: \n
-          1. **Room view related** - Keywords: view, balcony, window\n
+          Upon observing the keywords in all the topics, the 10 most mentioned subjects in the reviews were identified, as follows: \n
 
-          2. **Room size / Comfort related** - Keywords: bed, comfy, cozy, cosy, pillow, mattress, uncomfort, size, space, family, luxury, twin, executive\n
+          1. **Room size / Comfort related** - Keywords: bed, comfy, cozy, cosy, pillow, mattress, uncomfort, airconditioning, size, space, family, luxury, twin, executive\n
 
-          3. **Bathroom related** - Keywords:  bathroom, floor, shower, bath, water, toiletry, sink, slipper\n
+          2. **Bathroom related** - Keywords:  bathroom, floor, shower, bath, water, toiletry, sink, slipper\n
+          
+          3. **Room view related** - Keywords: view, balcony\n
 
           4. **Facility related** - Keywords: facility, furniture, wardrobe, kettle, coffee, milk, tea, pool, facility, fridge, cup, parking\n
 
@@ -102,7 +101,7 @@ def main():
 
           7. **Stay Experience related** - Keywords: noise, problem, smell, control, temperature, light, hear, sound, loud, construction, street\n
 
-          8. **Nightlife related** - Keywords: night, drink, lounge, cocktail, bar\n
+          8. **Nightlife related** - Keywords: drink, lounge, cocktail, bar, beer\n
 
           9. **Location / Accessiblity related** - Keywords: location, area, station, metro, proximity, walk, tube, tram, train, access, bus, car, convenient, attraction, airport, distance, taxi, public, transport\n
 
