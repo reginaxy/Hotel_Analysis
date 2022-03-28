@@ -74,7 +74,7 @@ def main():
        topic_choice = st.selectbox("Choose one:", ["What is LDA Topic Modelling?", "Topic Model Results"])
     
        if topic_choice == "What is LDA Topic Modelling?": 
-           st.header("What is LDA?")
+           st.header("What is LDA Topic Modelling?")
            image = Image.open("streamlit_template/LDA-algorithm.png")
            st.image(image, caption='LDA Topic Modelling')
            st.write("""
