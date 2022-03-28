@@ -21,10 +21,10 @@ def main():
 
     if page == "Homepage":
         st.title("Introduction of the Project")
-        st.header("Objectives")
-        st.write("The purpose of this project is to perform an analysis on a European Luxury Hotel Reviews dataset.")
+        st.subheader("Purpose")
+        st.write("To perform an analysis on a European Luxury Hotel Reviews dataset.")
         st.write("**Data Source:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
-        st.write("**Deliverables of the project:**")
+        st.subheader("Deliverables of the project:")
         st.write("1. An interactive Power BI Dashboard to visualize useful findings from the dataset. \n"
                  "2. Sentiment Analysis on the reviews, including a Sentiment Classification Model using a suitable Machine Learning (ML) Algorithm. \n"
                  "3. Topic Modelling to discover the most talked topics in the reviews.\n")
