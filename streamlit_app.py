@@ -43,15 +43,18 @@ def main():
 
     elif page == "Sentiment Analysis":
       st.title("Sentiment Analysis 😊🙁")
-        
-            # Sentiment Classification
-      st.header("Sentiment Classification")
       sent_choice = st.selectbox("Choose one:", ["What is Sentiment Analysis?", "Sentiment Classifier"])
+        
       if sent_choice == 'What is Sentiment Analysis?':
-          st.write("Sentiment analysis (also known as opinion mining) is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
+        st.header("What is Sentiment Analysis?")
+        st.write("Sentiment analysis (also known as opinion mining) is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
         Sentiment analysis is frequently used on textual data to assist organisations in tracking brand and product sentiment in consumer feedback and better understanding customer demands.")
-     
-      if sent_choice == 'Sentiment Classifier':
+        
+        image = Image.open("streamlit_template/SA.png")
+        st.image(image, caption='Sentiment Analysis')
+    
+      elif sent_choice == 'Sentiment Classifier':
+          st.header("Sentiment Classification Model")  
           sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
           user_input = st.text_area("Enter a review", "I loved the trip!")
           if st.button('PREDICT ▶️'):
@@ -66,10 +69,11 @@ def main():
 
               
     elif page == "Topic Modelling":
-       topic_choice = st.selectbox("Choose one:", ["What is Topic Modelling?", "Topic Modelling Results"])
+       st.title("Topic Modelling 💬")
+       topic_choice = st.selectbox("Choose one:", ["What is Topic Modelling?", "Topic Model Results"])
     
        if topic_choice == "What is Topic Modelling?": 
-           st.subheader("What is LDA?")
+           st.header("What is LDA?")
            st.write("""
               **Latent Dirichlet Allocation (LDA)** is a popular topic modelling approach to extract themes from a corpus. 
               The phrase "latent" refers to something that is there but not fully formed. In other terms, latent refers to something that is hidden or concealed.
@@ -81,11 +85,13 @@ def main():
               1. Documents are made up of a variety of subjects (mixture of topics)\n
               2. Each topic are made up of a number of tokens (or words) 
               """)
+            image = Image.open("streamlit_template/LDA-algorithm.png")
+            st.image(image, caption='LDA Topic Modelling')
             
-       elif topic_choice == "Topic Modelling Results":
+       elif topic_choice == "Topic Model Results":
+        st.header("Topic Model Results")
         lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
           # Show Topics
-        st.title("Topic Modelling 💬")
         st.header("Topic Keywords")
 
         choice = st.multiselect("Pick Number of Topics to view", range(lda_model.num_topics))
