@@ -26,7 +26,7 @@ def main():
         st.write("**Data Source:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
         st.header("Deliverables")
         st.write("1. An interactive Power BI Dashboard to visualize useful findings from the dataset. \n"
-                 "2. Sentiment Analysis on the reviews, including a Sentiment Classification Model using a suitable Machine Learning (ML) Algorithm. \n"
+                 "2. Sentiment Analysis on the reviews, including a sentiment classifier using a suitable Machine Learning (ML) Algorithm. \n"
                  "3. Topic Modelling to discover the most talked topics in the reviews.\n")
         
         st.header("Data Analytics Process")
@@ -55,7 +55,7 @@ def main():
        
     
       elif sent_choice == 'Sentiment Classifier':
-          st.header("Sentiment Classification Model")  
+          st.header("Sentiment Classifier")  
           sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
           user_input = st.text_area("Enter a review to predict", "I loved the trip!")
           if st.button('PREDICT ▶️'):
