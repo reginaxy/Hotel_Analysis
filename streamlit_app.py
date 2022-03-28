@@ -84,7 +84,7 @@ def main():
               **Two fundamental assumptions are made by the LDA:**\n
               1. Documents are made up of a variety of subjects (mixture of topics)\n
               2. Each topic are made up of a number of tokens (or words) 
-              """)
+            """)
             image = Image.open("streamlit_template/LDA-algorithm.png")
             st.image(image, caption='LDA Topic Modelling')
             
