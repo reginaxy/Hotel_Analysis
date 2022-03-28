@@ -69,7 +69,6 @@ def main():
        topic_choice = st.selectbox("Choose one:", ["What is Topic Modelling?", "Topic Modelling Results"])
     
        if topic_choice == "What is Topic Modelling?": 
-      
            st.subheader("What is LDA?")
            st.write("""
               **Latent Dirichlet Allocation (LDA)** is a popular topic modelling approach to extract themes from a corpus. 
