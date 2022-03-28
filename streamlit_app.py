@@ -46,9 +46,15 @@ def main():
         
             # Sentiment Classification
       st.header("Sentiment Classification")
-      sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
-      user_input = st.text_area("Enter a review", "I loved the trip!")
-      if st.button('PREDICT ▶️'):
+      sent_choice = st.selectbox("Choose one:", ["What is Sentiment Analysis?", "Sentiment Classifier"])
+      if sent_choice == 'What is Sentiment Analysis?':
+          st.write("Sentiment analysis (also known as opinion mining) is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
+        Sentiment analysis is frequently used on textual data to assist organisations in tracking brand and product sentiment in consumer feedback and better understanding customer demands.")
+     
+      if sent_choice == 'Sentiment Classifier':
+          sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
+          user_input = st.text_area("Enter a review", "I loved the trip!")
+          if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
                   b = sent_model.predict_proba([user_input])[0]
 
@@ -60,55 +66,74 @@ def main():
 
               
     elif page == "Topic Modelling":
-      lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
-      # Show Topics
-      st.title("Topic Modelling 💬")
-      st.header("Topic Keywords")
+       topic_choice = st.selectbox("Choose one:", ["What is Topic Modelling?", "Topic Modelling Results"])
+    
+       if topic_choice == "What is Topic Modelling?": 
+      
+           st.subheader("What is LDA?")
+           st.write("""
+              **Latent Dirichlet Allocation (LDA)** is a popular topic modelling approach to extract themes from a corpus. 
+              The phrase "latent" refers to something that is there but not fully formed. In other terms, latent refers to something that is hidden or concealed.
+              The themes we'd want to extract from the data are now "hidden topics". It has yet to be found. As a result, the term "latent" is used in LDA. 
 
-      choice = st.multiselect("Pick Number of Topics to view", range(lda_model.num_topics))
-      all_options = st.checkbox("Select all options")
-      if all_options:
-          choice = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+              The challenge of Topic Modelling is how to extract good quality of topics that are clear, segregated and meaningful. This depends heavily on the quality of text preprocessing and the strategy of finding the optimal number of topics.\n
 
-      for t in choice:
-          plt.figure()
-          plt.imshow(WordCloud(background_color='white').fit_words(dict(lda_model.show_topic(t, 200))))
-          plt.axis("off")
-          plt.title("Topic #" + str(t))
-          st.pyplot()
+              **Two fundamental assumptions are made by the LDA:**\n
+              1. Documents are made up of a variety of subjects (mixture of topics)\n
+              2. Each topic are made up of a number of tokens (or words) 
+              """)
+            
+        elif topic_choice == "Topic Modelling Results":
+        
+              lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
+              # Show Topics
+              st.title("Topic Modelling 💬")
+              st.header("Topic Keywords")
 
-      with st.expander("Topics Identified"):
-          st.write("""
-          In short, **Topic Modelling** is a text mining approach to find common subjects in texts. \
-          Topic modelling can connect words with similar meanings together, \
-          and distinguish between usage of words with numerous meanings by assigning them to different topics. \n
-          
-          The main **disadvantage** of topic modelling is the need for humans to interpret the topics themselves. \
-          Although the model will display the keywords present in each specific topic, humans will still need to identify the most important keywords in each topic, \
-          then make logical and reasonable inferences based on the keywords identified.\n
- 
-          Upon observing the keywords in all the topics, the 10 most mentioned subjects in the reviews were identified, as follows: \n
+              choice = st.multiselect("Pick Number of Topics to view", range(lda_model.num_topics))
+              all_options = st.checkbox("Select all options")
+              if all_options:
+                  choice = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 
-          1. **Room size / Comfort related** - Keywords: bed, comfy, cozy, cosy, pillow, mattress, uncomfort, airconditioning, size, space, family, luxury, twin, executive\n
+              for t in choice:
+                  plt.figure()
+                  plt.imshow(WordCloud(background_color='white').fit_words(dict(lda_model.show_topic(t, 200))))
+                  plt.axis("off")
+                  plt.title("Topic #" + str(t))
+                  st.pyplot()
 
-          2. **Bathroom related** - Keywords:  bathroom, floor, shower, bath, water, toiletry, sink, slipper\n
-          
-          3. **Room view related** - Keywords: view, balcony\n
+              with st.expander("Topics Identified"):
+                  st.write("""
+                  In short, **Topic Modelling** is a text mining approach to find common subjects in texts. \
+                  Topic modelling can connect words with similar meanings together, \
+                  and distinguish between usage of words with numerous meanings by assigning them to different topics. \n
 
-          4. **Facility related** - Keywords: facility, furniture, wardrobe, kettle, coffee, milk, tea, pool, facility, fridge, cup, parking\n
+                  The main **disadvantage** of topic modelling is the need for humans to interpret the topics themselves. \
+                  Although the model will display the keywords present in each specific topic, humans will still need to identify the most important keywords in each topic, \
+                  then make logical and reasonable inferences based on the keywords identified.\n
 
-          5. **Service related** - Keywords: staff, service, reception, helpful, polite, desk, concierge, efficient, kind, customer, receptionist\n
+                  Upon observing the keywords in all the topics, the 10 most mentioned subjects in the reviews were identified, as follows: \n
 
-          6. **Food / Dining related** - Keywords: breakfast, dinner, buffet, choice,fruit , reservation, restaurant, food, cafe, selection, option\n
+                  1. **Room size / Comfort related** - Keywords: bed, comfy, cozy, cosy, pillow, mattress, uncomfort, airconditioning, size, space, family, luxury, twin, executive\n
 
-          7. **Stay Experience related** - Keywords: noise, problem, smell, control, temperature, light, hear, sound, loud, construction, street\n
+                  2. **Bathroom related** - Keywords:  bathroom, floor, shower, bath, water, toiletry, sink, slipper\n
 
-          8. **Nightlife related** - Keywords: drink, lounge, cocktail, bar, beer\n
+                  3. **Room view related** - Keywords: view, balcony\n
 
-          9. **Location / Accessiblity related** - Keywords: location, area, station, metro, proximity, walk, tube, tram, train, access, bus, car, convenient, attraction, airport, distance, taxi, public, transport\n
+                  4. **Facility related** - Keywords: facility, furniture, wardrobe, kettle, coffee, milk, tea, pool, facility, fridge, cup, parking\n
 
-          10. **Internet related** - Keywords: wifi, internet, connect
-          """)
+                  5. **Service related** - Keywords: staff, service, reception, helpful, polite, desk, concierge, efficient, kind, customer, receptionist\n
+
+                  6. **Food / Dining related** - Keywords: breakfast, dinner, buffet, choice,fruit , reservation, restaurant, food, cafe, selection, option\n
+
+                  7. **Stay Experience related** - Keywords: noise, problem, smell, control, temperature, light, hear, sound, loud, construction, street\n
+
+                  8. **Nightlife related** - Keywords: drink, lounge, cocktail, bar, beer\n
+
+                  9. **Location / Accessiblity related** - Keywords: location, area, station, metro, proximity, walk, tube, tram, train, access, bus, car, convenient, attraction, airport, distance, taxi, public, transport\n
+
+                  10. **Internet related** - Keywords: wifi, internet, connect
+                  """)
 
 if __name__ == "__main__":
   main()
