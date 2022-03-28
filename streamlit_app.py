@@ -20,17 +20,19 @@ def main():
     page = st.sidebar.radio("Choose a page", ["Homepage", "Power BI Dashboard", "Sentiment Analysis", "Topic Modelling"])
 
     if page == "Homepage":
-        st.title("Objectives of the project")
+        st.title("Introduction of the Project")
+        st.header("Objectives")
         st.write("The purpose of this project is to perform an analysis on a European Luxury Hotel Reviews dataset.")
         st.write("**Data Source:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
-        st.write("**Deliverables of the project: -**")
+        st.write("**Deliverables of the project:**")
         st.write("1. An interactive Power BI Dashboard to visualize useful findings from the dataset. \n"
-                 "2. Sentiment Analysis on the customer reviews, including a Sentiment Classification Model using a suitable Machine Learning (ML) Algorithm. \n"
-                 "3. Topic Modelling to discover the most talked topics in the customer reviews.\n")
+                 "2. Sentiment Analysis on the reviews, including a Sentiment Classification Model using a suitable Machine Learning (ML) Algorithm. \n"
+                 "3. Topic Modelling to discover the most talked topics in the reviews.\n")
         
-        st.header("Data Pipeline")
-        image = Image.open("streamlit_template/Data Pipeline.png")
-        st.image(image, caption='Data Pipeline')
+        st.header("Data Analytics Process")
+        st.write("
+        image = Image.open("streamlit_template/Data Process.png")
+        st.image(image, caption='Data Analytics Process')
 
 
     elif page == "Power BI Dashboard":
