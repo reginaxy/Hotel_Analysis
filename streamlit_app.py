@@ -20,11 +20,11 @@ def main():
     page = st.sidebar.radio("Choose a page", ["Homepage", "Power BI Dashboard", "Sentiment Analysis", "Topic Modelling"])
 
     if page == "Homepage":
-        st.title("Introduction")
-        st.subheader("Purpose of the Project")
+        st.title("Introduction of the Project")
+        st.subheader("Purpose")
         st.write("To perform an analysis on a European Luxury Hotel Reviews dataset.")
         st.write("**Data Source:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
-        st.subheader("Deliverables of the Project")
+        st.subheader("Deliverables")
         st.write("1. An interactive Power BI Dashboard to visualize useful findings from the dataset. \n"
                  "2. Sentiment Analysis on the reviews, including a Sentiment Classification Model using a suitable Machine Learning (ML) Algorithm. \n"
                  "3. Topic Modelling to discover the most talked topics in the reviews.\n")
