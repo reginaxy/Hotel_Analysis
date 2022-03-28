@@ -47,11 +47,11 @@ def main():
         
       if sent_choice == 'What is Sentiment Analysis?':
         st.header("What is Sentiment Analysis?")
-        st.write("Sentiment analysis (also known as opinion mining) is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
-        Sentiment analysis is frequently used on textual data to assist organisations in tracking brand and product sentiment in consumer feedback and better understanding customer demands.")
-        
         image = Image.open("streamlit_template/SA.png")
         st.image(image, caption='Sentiment Analysis')
+        st.write("Sentiment analysis (also known as opinion mining) is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
+        Sentiment analysis is frequently used on textual data to assist organisations in tracking brand and product sentiment in consumer feedback and better understanding customer demands.")
+       
     
       elif sent_choice == 'Sentiment Classifier':
           st.header("Sentiment Classification Model")  
@@ -74,6 +74,8 @@ def main():
     
        if topic_choice == "What is Topic Modelling?": 
            st.header("What is LDA?")
+           image = Image.open("streamlit_template/LDA-algorithm.png")
+           st.image(image, caption='LDA Topic Modelling')
            st.write("""
               **Latent Dirichlet Allocation (LDA)** is a popular topic modelling approach to extract themes from a corpus. 
               The phrase "latent" refers to something that is there but not fully formed. In other terms, latent refers to something that is hidden or concealed.
@@ -85,8 +87,7 @@ def main():
               1. Documents are made up of a variety of subjects (mixture of topics)\n
               2. Each topic are made up of a number of tokens (or words) 
             """)
-            image = Image.open("streamlit_template/LDA-algorithm.png")
-            st.image(image, caption='LDA Topic Modelling')
+            
             
        elif topic_choice == "Topic Model Results":
         st.header("Topic Model Results")
