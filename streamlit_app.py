@@ -49,14 +49,14 @@ def main():
         st.header("What is Sentiment Analysis?")
         image = Image.open("streamlit_template/SA.png")
         st.image(image, caption='Sentiment Analysis')
-        st.write("Sentiment analysis (also known as opinion mining) is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
-        Sentiment analysis is frequently used on textual data to assist organisations in tracking brand and product sentiment in consumer feedback and better understanding customer demands.")
+        st.write("Sentiment analysis is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
+        Sentiment analysis is frequently used on textual data to assist organizations in tracking brand and product sentiment in consumer feedback and better understand customer demands.")
        
     
       elif sent_choice == 'Sentiment Classifier':
           st.header("Sentiment Classification Model")  
           sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
-          user_input = st.text_area("Enter a review", "I loved the trip!")
+          user_input = st.text_area("Enter a review to predict", "I loved the trip!")
           if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
                   b = sent_model.predict_proba([user_input])[0]
@@ -70,22 +70,25 @@ def main():
               
     elif page == "Topic Modelling":
        st.title("Topic Modelling 💬")
-       topic_choice = st.selectbox("Choose one:", ["What is Topic Modelling?", "Topic Model Results"])
+       topic_choice = st.selectbox("Choose one:", ["What is LDA Topic Modelling?", "Topic Model Results"])
     
-       if topic_choice == "What is Topic Modelling?": 
+       if topic_choice == "What is LDA Topic Modelling?": 
            st.header("What is LDA?")
            image = Image.open("streamlit_template/LDA-algorithm.png")
            st.image(image, caption='LDA Topic Modelling')
            st.write("""
+              Topic modeling is a text processing technique, which is aimed at overcoming information overload by seeking out and demonstrating patterns in textual data, 
+              identified as the 'topics'. It enables an improved user experience, allowing analysts to navigate quickly through a corpus of text or a collection, guided by identified topics.\n
               **Latent Dirichlet Allocation (LDA)** is a popular topic modelling approach to extract themes from a corpus. 
-              The phrase "latent" refers to something that is there but not fully formed. In other terms, latent refers to something that is hidden or concealed.
-              The themes we'd want to extract from the data are now "hidden topics". It has yet to be found. As a result, the term "latent" is used in LDA. 
+              The phrase "latent" refers to something that is hidden or concealed.
+              The themes we'd want to extract from the data are "hidden topics". As a result, the term "latent" is used in LDA. 
 
-              The challenge of Topic Modelling is how to extract good quality of topics that are clear, segregated and meaningful. This depends heavily on the quality of text preprocessing and the strategy of finding the optimal number of topics.\n
+              The challenges of Topic Modelling is to extract good quality of topics that are clear, segregated and meaningful. \
+              This depends heavily on the quality of text preprocessing and the strategy of finding the optimal number of topics.\n
 
               **Two fundamental assumptions are made by the LDA:**\n
-              1. Documents are made up of a variety of subjects (mixture of topics)\n
-              2. Each topic are made up of a number of tokens (or words) 
+              1. Documents are made up of a variety / mixture of topics \n
+              2. Each topic are made up of a number of words
             """)
             
             
