@@ -116,7 +116,7 @@ def main():
         def format_func(option):
             return CHOICES[option]
         option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
-        st.write(f"You selected option {option} called {format_func(option)}")
+        st.write(f"You selected option {format_func(option)}")
 
 #         num = list(range(lda_model.num_topics) 
 
@@ -125,12 +125,12 @@ def main():
 #         if all_options:
 #            choice = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
-        for t in CHOICES:
-          plt.figure()
-          plt.imshow(WordCloud(background_color='white').fit_words(dict(lda_model.show_topic(t, 200))))
-          plt.axis("off")
-          plt.title("Topic #" + str(t))
-          st.pyplot()
+            for t in CHOICES:
+              plt.figure()
+              plt.imshow(WordCloud(background_color='white').fit_words(dict(lda_model.show_topic(t, 200))))
+              plt.axis("off")
+              plt.title("Topic #" + str(t+1))
+              st.pyplot()
 
         with st.expander("Topics Identified"):
           st.write("""
