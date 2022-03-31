@@ -118,7 +118,8 @@ def main():
         all_options = st.checkbox("Select all options")
         if all_options:
            num_choice = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-        for t in CHOICES[option]:
+        
+        for t in choice:
               plt.figure()
               plt.imshow(WordCloud(background_color='white').fit_words(dict(lda_model.show_topic(t, 200))))
               plt.axis("off")
