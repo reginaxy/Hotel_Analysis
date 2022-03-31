@@ -111,7 +111,7 @@ def main():
           # Show Topics
         st.header("Topic Keywords")
 
-        range(lda_model.num_topics) 
+        num = range(lda_model.num_topics) 
         choice = st.multiselect("Pick Number of Topics to view", range(num + 1))
         all_options = st.checkbox("Select all options")
         if all_options:
