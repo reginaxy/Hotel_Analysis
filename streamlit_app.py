@@ -120,7 +120,7 @@ def main():
           plt.figure()
           plt.imshow(WordCloud(background_color='white').fit_words(dict(lda_model.show_topic(t, 200))))
           plt.axis("off")
-          plt.title("Topic #" + str(t))
+          plt.title("Topic #" + str(t+1))
           st.pyplot()
 
         with st.expander("Topics Identified"):
