@@ -105,7 +105,7 @@ def main():
         HtmlFile = open("streamlit_template/lda.html", 'r', encoding='utf-8')
         source_code = HtmlFile.read() 
         print(source_code)
-        components.html(source_code, width=1000, height=800, scrolling=True)
+        components.html(source_code, width=1300, height=800, scrolling=True)
         
         lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
           # Show Topics
@@ -115,7 +115,7 @@ def main():
         choice = st.multiselect("Pick Number of Topics to view", num)
         all_options = st.checkbox("Select all options")
         if all_options:
-           choice = [0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+           choice = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
         
         for t in choice:
               plt.figure()
