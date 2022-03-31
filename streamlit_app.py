@@ -112,10 +112,11 @@ def main():
         st.header("Topic Keywords")
 
         num = range(lda_model.num_topics) 
-        choice = st.multiselect("Pick Number of Topics to view", range(num+1))
+        num_choice = st.write(num+1)
+        choice = st.multiselect("Pick Number of Topics to view", num_choice)
         all_options = st.checkbox("Select all options")
         if all_options:
-           choice = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+           choice = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
         for t in choice:
           plt.figure()
