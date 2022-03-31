@@ -105,7 +105,7 @@ def main():
         HtmlFile = open("streamlit_template/lda.html", 'r', encoding='utf-8')
         source_code = HtmlFile.read() 
         print(source_code)
-        components.html(source_code, width=1300, height=800, scrolling=True)
+        components.html(source_code, width=1000, height=800, scrolling=True)
         
         lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
           # Show Topics
