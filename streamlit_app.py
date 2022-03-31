@@ -102,7 +102,7 @@ def main():
 #         components.v1.html(diplo_string, width=1300, height=800, scrolling=True)
         
         html_string = ('streamlit_template/lda.html')
-        st.markdown(html_string, unsafe_allow_html=True)
+        st.html(html_string, unsafe_allow_html=True)
         
         lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
           # Show Topics
