@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 
 import gensim
 from gensim import corpora
-import pyLDAvis
-import pyLDAvis.gensim_models
+# import pyLDAvis
+# import pyLDAvis.gensim_models
 from wordcloud import WordCloud, STOPWORDS
 
 from PIL import Image
