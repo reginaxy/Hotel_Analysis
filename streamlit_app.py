@@ -97,9 +97,12 @@ def main():
             
        elif topic_choice == "Topic Model Results":
         st.header("Topic Model Results")
-        html_string = pyLDAvis.prepared_data_to_html('streamlit_template/lda.html')
-        from streamlit import components
-        components.v1.html(diplo_string, width=1300, height=800, scrolling=True)
+#         html_string = pyLDAvis.prepared_data_to_html('streamlit_template/lda.html')
+#         from streamlit import components
+#         components.v1.html(diplo_string, width=1300, height=800, scrolling=True)
+        
+        html_string = ('streamlit_template/lda.html')
+        st.markdown(html_string, unsafe_allow_html=True)
         
         lda_model = gensim.models.ldamodel.LdaModel.load('streamlit_template/LDAmallet_NOUNS')
           # Show Topics
