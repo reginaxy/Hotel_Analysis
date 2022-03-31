@@ -112,7 +112,7 @@ def main():
         st.header("Topic Keywords")
 
         num = range(lda_model.num_topics) 
-        choice = st.multiselect("Pick Number of Topics to view", st.write(num + 1))
+        choice = st.multiselect("Pick Number of Topics to view", num)
         all_options = st.checkbox("Select all options")
         if all_options:
            choice = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
@@ -121,7 +121,7 @@ def main():
           plt.figure()
           plt.imshow(WordCloud(background_color='white').fit_words(dict(lda_model.show_topic(t, 200))))
           plt.axis("off")
-          plt.title("Topic #" + str(t+1))
+          plt.title("Topic #" + str(t))
           st.pyplot()
 
         with st.expander("Topics Identified"):
