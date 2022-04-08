@@ -9,6 +9,8 @@ from gensim import corpora
 
 from wordcloud import WordCloud, STOPWORDS
 
+ import streamlit.components.v1 as components
+
 from PIL import Image
 
 def main():
@@ -97,10 +99,6 @@ def main():
             
        elif topic_choice == "Topic Model Results":
         st.header("Topic Model Results")
-
-        import streamlit.components.v1 as components
-#         html_string = ('<h3>streamlit_template/lda.html<h3>')
-#         st.components.v1.html(html_string, width=None, height=None, scrolling=False)
         
         HtmlFile = open("streamlit_template/lda.html", 'r', encoding='utf-8')
         source_code = HtmlFile.read() 
