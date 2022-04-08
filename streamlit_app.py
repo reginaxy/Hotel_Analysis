@@ -37,13 +37,9 @@ def main():
 
     elif page == "Power BI Dashboard":
         st.title("Power BI Dashboard 📊")
-        link='Link to original dashboard: [click here](https://app.powerbi.com/view?r=eyJrIjoiZWViNWE4N2YtZmM0OS00MzFkL\
-        Tk0MDgtMDdlOTZhMTc4NGY0IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)'
+        link='Link to original dashboard: [click here](https://app.powerbi.com/view?r=eyJrIjoiZWViNWE4N2YtZmM0OS00MzFkLTk0MDgtMDdlOTZhMTc4NGY0IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)'
         st.markdown(link,unsafe_allow_html=True)
-        st.markdown('<iframe title="Hotel (Web version)" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiZWViNW\
-        E4N2YtZmM0OS00MzFkLTk0MDgtMDdlOTZhMTc4NGY0IiwidCI6IjBmZWQw\
-        M2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=\
-        ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)
+        st.markdown('<iframe title="Hotel (Web version)" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiZWViNWE4N2YtZmM0OS00MzFkLTk0MDgtMDdlOTZhMTc4NGY0IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)
 
     elif page == "Sentiment Analysis":
       st.title("Sentiment Analysis 😊🙁")
