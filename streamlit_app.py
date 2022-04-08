@@ -54,7 +54,8 @@ def main():
         image = Image.open("streamlit_template/SA.png")
         st.image(image, caption='Sentiment Analysis')
         st.write("Sentiment analysis is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
-        Sentiment analysis is frequently used on textual data to assist organizations in tracking brand and product sentiment in consumer feedback and better understand customer demands.")
+        Sentiment analysis is frequently used on textual data to assist organizations in tracking brand and product sentiment in \
+        consumer feedback and better understand customer demands.")
        
     
       elif sent_choice == 'Sentiment Classifier':
@@ -81,8 +82,10 @@ def main():
            image = Image.open("streamlit_template/LDA-algorithm.png")
            st.image(image, caption='LDA Topic Modelling')
            st.write("""
-              Topic modeling is a text processing technique, which is aimed at overcoming information overload by seeking out and demonstrating patterns in textual data, 
-              identified as the 'topics'. It enables an improved user experience, allowing analysts to navigate quickly through a corpus of text or a collection, guided by identified topics.\n
+              Topic modeling is a text processing technique, which is aimed at overcoming information overload by seeking out and \
+              demonstrating patterns in textual data, 
+              identified as the 'topics'. It enables an improved user experience, allowing analysts to navigate quickly through a \
+              corpus of text or a collection, guided by identified topics.\n
               **Latent Dirichlet Allocation (LDA)** is a popular topic modelling approach to extract themes from a corpus. 
               The phrase "latent" refers to something that is hidden or concealed.
               The themes we'd want to extract from the data are "hidden topics". As a result, the term "latent" is used in LDA. 
@@ -132,12 +135,14 @@ def main():
           and distinguish between usage of words with numerous meanings by assigning them to different topics. \n
 
           The main **disadvantage** of topic modelling is the need for humans to interpret the topics themselves. \
-          Although the model will display the keywords present in each specific topic, humans will still need to identify the most important keywords in each topic, \
+          Although the model will display the keywords present in each specific topic, humans will still need to \
+          identify the most important keywords in each topic, \
           then make logical and reasonable inferences based on the keywords identified.\n
 
           Upon observing the keywords in all the topics, the 10 most mentioned subjects in the reviews were identified, as follows: \n
 
-          1. **Room size / Comfort related** - Keywords: bed, comfy, cozy, cosy, pillow, mattress, uncomfort, airconditioning, size, space, family, luxury, twin, executive\n
+          1. **Room size / Comfort related** - Keywords: bed, comfy, cozy, cosy, pillow, mattress, uncomfort, 
+          airconditioning, size, space, family, luxury, twin, executive\n
 
           2. **Bathroom related** - Keywords:  bathroom, floor, shower, bath, water, toiletry, sink, slipper\n
 
@@ -153,7 +158,8 @@ def main():
 
           8. **Nightlife related** - Keywords: drink, lounge, cocktail, bar, beer\n
 
-          9. **Location / Accessiblity related** - Keywords: location, area, station, metro, proximity, walk, tube, tram, train, access, bus, car, convenient, attraction, airport, distance, taxi, public, transport\n
+          9. **Location / Accessiblity related** - Keywords: location, area, station, metro, proximity, walk, tube, tram, train, access, bus, 
+          car, convenient, attraction, airport, distance, taxi, public, transport\n
 
           10. **Internet related** - Keywords: wifi, internet, connect
           """)
