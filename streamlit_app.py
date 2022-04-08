@@ -9,7 +9,7 @@ from gensim import corpora
 
 from wordcloud import WordCloud, STOPWORDS
 
- import streamlit.components.v1 as components
+import streamlit.components.v1 as components
 
 from PIL import Image
 
