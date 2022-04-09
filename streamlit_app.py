@@ -33,8 +33,8 @@ def main():
         customer contentment, and customer loyalty are not overlooked. Aside, many more could be discovered and spotted upon a comprehensive reviews analysis.") 
     
         st.write("However, with the huge number of reviews that exists on the Internet, it would be extremely time consuming for the hotel management to \
-        analyse and discover trends or pattern by going through every single review. Hence, certain tools, techniques, and expertise \
-        would be required to accelerate this process.") 
+        analyse and discover anomalies, trends or patterns by going through every single review. Hence, the introduction of certain tools, techniques, and expertise \
+        would be able to accelerate this time consuming process.") 
         
         st.header("Objective")
                  
