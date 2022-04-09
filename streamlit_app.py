@@ -24,9 +24,23 @@ def main():
 
     if page == "Homepage":
         st.title("Introduction of the Project")
-        st.header("Purpose")
-        st.write("To perform an analysis on a European Luxury Hotel Reviews dataset.")
+        
+        st.header("Problem Statement")
+ 
+        st.write("With the rich amount of information that can be captured through reviews, it would be a huge loss if the hotel management chooses to ignore them.\
+        By conducting a detailed analysis on the reviews, it presents a wider picture about the hotel’s brand, and guarantees that the 'small things' \
+        that might boost the hotel’s potential, \
+        customer contentment, and customer loyalty are not overlooked. Aside, many more could be discovered and spotted upon a comprehensive reviews analysis.\) 
+    
+        st.write("However, with the huge number of reviews that exists on the Internet, it would be extremely time consuming for the hotel management to \
+        analyse and discover trends or pattern by going through every single review. Hence, certain tools, techniques, and expertise \
+        would be required to accelerate this process.") 
+        
+        st.header("Objective")
+                 
+        st.write("To perform an analysis on an open-sourced European Luxury Hotel Reviews dataset.")
         st.write("**Data Source:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
+        
         st.header("Deliverables")
         st.write("1. An interactive Power BI Dashboard to visualize useful findings from the dataset. \n"
                  "2. Sentiment Analysis on the reviews, including a sentiment classifier using a suitable Machine Learning (ML) Algorithm. \n"
