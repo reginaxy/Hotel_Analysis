@@ -38,7 +38,7 @@ def main():
         
         st.header("Objective")
                  
-        st.write("To perform an analysis on an open-sourced European Luxury Hotel Reviews dataset.")
+        st.write("To perform an analysis on a European Luxury Hotel Reviews dataset using suitable analytics tools and techniques.")
         st.write("**Data Source:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
         
         st.header("Deliverables")
