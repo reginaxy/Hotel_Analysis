@@ -1,4 +1,6 @@
 import streamlit as st
+import streamlit.components.v1 as components
+
 import pickle
 
 from matplotlib import pyplot
@@ -8,8 +10,6 @@ import gensim
 from gensim import corpora
 
 from wordcloud import WordCloud, STOPWORDS
-
-import streamlit.components.v1 as components
 
 from PIL import Image
 
