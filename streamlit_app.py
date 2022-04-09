@@ -30,7 +30,7 @@ def main():
         st.write("With the rich amount of information that can be captured through reviews, it would be a huge loss if the hotel management chooses to ignore them.\
         By conducting a detailed analysis on the reviews, it presents a wider picture about the hotel’s brand, and guarantees that the 'small things' \
         that might boost the hotel’s potential, \
-        customer contentment, and customer loyalty are not overlooked. Aside, many more could be discovered and spotted upon a comprehensive reviews analysis.\) 
+        customer contentment, and customer loyalty are not overlooked. Aside, many more could be discovered and spotted upon a comprehensive reviews analysis.") 
     
         st.write("However, with the huge number of reviews that exists on the Internet, it would be extremely time consuming for the hotel management to \
         analyse and discover trends or pattern by going through every single review. Hence, certain tools, techniques, and expertise \
