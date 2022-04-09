@@ -39,7 +39,7 @@ def main():
         st.header("Objective")
                  
         st.write("To perform an analysis on a European Luxury Hotel Reviews dataset using suitable analytics tools and techniques.")
-        st.write("**Data Source:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
+        st.write("**The dataset to be analyzed can be found here:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
         
         st.header("Deliverables")
         st.write("1. An interactive Power BI Dashboard to visualize useful findings from the dataset. \n"
