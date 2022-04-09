@@ -27,12 +27,12 @@ def main():
         
         st.header("Problem Statement")
  
-        st.write("With the rich amount of information that can be captured through reviews, it would be a huge loss if the hotel management chooses to ignore them.\
-        By conducting a detailed analysis on the reviews, it presents a wider picture about the hotel’s brand, and guarantees that the 'small things' \
+        st.write("With the rich amount of information that can be captured through customer reviews, it would be a huge loss if hotel managers chooses to ignore them.\
+        By conducting a detailed analysis on the customer reviews, it may present a wider picture about the hotel’s brand, and guarantees that the 'small things' \
         that might boost the hotel’s potential, \
-        customer contentment, and customer loyalty are not overlooked. Aside, many more could be discovered and spotted upon a comprehensive reviews analysis.") 
+        customer contentment, and customer loyalty are not overlooked. Aside, many more could be discovered and spotted upon a comprehensive review analysis.") 
     
-        st.write("However, with the huge number of reviews that exists on the Internet, it would be extremely time consuming for the hotel management to \
+        st.write("However, with the huge number of reviews that exists on the Internet, it would be extremely time consuming for hotel managers to \
         analyse and discover anomalies, trends or patterns by going through every single review. Hence, the introduction of certain tools, techniques, and expertise \
         would be able to accelerate this time consuming process.") 
         
