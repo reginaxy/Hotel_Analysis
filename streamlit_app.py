@@ -47,7 +47,7 @@ def main():
                  "3. Topic Modelling to discover the most talked topics in the reviews.\n")
         
         st.header("Data Analytics Process")
-        image = Image.open("streamlit_template/Analytics Process.png")
+        image = Image.open("streamlit_template/Analytics Process new.png")
         st.image(image, caption='Data Analytics Process')
 
 
