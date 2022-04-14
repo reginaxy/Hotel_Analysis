@@ -16,12 +16,12 @@ from PIL import Image
 import lime
 from lime.lime_text import LimeTextExplainer
 
-{
-    "primaryColor": "Blue",
-    "backgroundColor": "Blue",
-    "secondaryBackgroundColor": "Green",
-    "textColor": "Black"
+<style>
+body {
+  background-color: lightgrey;
 }
+
+</style>
 
 def main():
     
