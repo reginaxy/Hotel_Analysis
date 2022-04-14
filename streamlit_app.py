@@ -22,8 +22,8 @@ def main():
 
     st.sidebar.title("About")
     html_temp = """
-    <div style="background-color:Blue;padding:1px">
-    <h1 style="color:white;text-align:center;">Customer Reviews Analysis of the Hotel Industry</h1>
+    <div style="background-color:Grey;padding:1px">
+    <h1 style="color:white;text-align:center;">Hotel Customer Reviews Analysis</h1>
     </div><br>"""
     st.markdown(html_temp,unsafe_allow_html=True)
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
