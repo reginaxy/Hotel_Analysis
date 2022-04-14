@@ -18,10 +18,14 @@ from lime.lime_text import LimeTextExplainer
 
 def main():
 
-    st.markdown("<span style=“background-color:#121922”>",unsafe_allow_html=True)
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     st.sidebar.title("About")
+    html_temp = """
+    <div style="background-color:Blue;padding:1.5px">
+    <h1 style="color:white;text-align:center;">Demo Web App </h1>
+    </div><br>"""
+    st.markdown(html_temp,unsafe_allow_html=True)
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
 
     st.sidebar.title("Navigation")
