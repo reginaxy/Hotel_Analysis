@@ -13,8 +13,8 @@ from wordcloud import WordCloud, STOPWORDS
 
 from PIL import Image
 
-import lime
-from lime.lime_text import LimeTextExplainer
+# import lime
+# from lime.lime_text import LimeTextExplainer
 
 def main():
     st.set_option('deprecation.showPyplotGlobalUse', False)
