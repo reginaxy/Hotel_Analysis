@@ -84,7 +84,7 @@ def main():
 
                   st.subheader("Sentiment Predicted: ")
                   if a == 'Positive':
-                    st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
+                    st.markdown(f'{text-align: center;}<h1 style="color:#33ff33;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
                       
                   elif a == 'Negative':
                     st.markdown(f'<h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
