@@ -85,62 +85,54 @@ def main():
 
     elif page == "Classifiers":
       st.title("Sentiment Classifier & Topic Classifier 😊🙁")
-      clf_choice = st.selectbox("Choose one:", ["Sentiment Classifier", "Topic Classifier"])
         
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       topic_model = pickle.load(open('streamlit_template/LR_Topic_Label.sav' , 'rb'))
       user_input = st.text_area("Enter a review to predict", "The check in process was straight forward, the room was very comfortable and clean. The staff were great, and the food was excellent too.")
-    
-        if clf_choice == 'Sentiment Classifier':
-            st.header("Sentiment Classifier")  
-            if st.button('PREDICT ▶️'):
-                  a = sent_model.predict([user_input])[0]
 
-                  st.subheader("Sentiment Predicted: ")
-                  if a == 'Positive':
-                    st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
+      if st.button('PREDICT ▶️'):
+            a = sent_model.predict([user_input])[0]
+
+            st.subheader("Sentiment Predicted: ")
+            if a == 'Positive':
+                st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
                       
-                  elif a == 'Negative':
-                    st.markdown(f'<h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
+            elif a == 'Negative':
+                st.markdown(f'<h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
                     
-                  class_names = ['negative', 'positive']
-                  explainer = LimeTextExplainer(class_names=class_names)
-                  exp = explainer.explain_instance(user_input, 
+            class_names = ['negative', 'positive']
+            explainer = LimeTextExplainer(class_names=class_names)
+            exp = explainer.explain_instance(user_input, 
                                                         sent_model.predict_proba, 
                                                         num_features=10)
                   
-                  st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Most Indicative Words"}</h1>', unsafe_allow_html=True)
-                  exp.save_to_file('lime.html')
-                  HtmlFile = open("lime.html", 'r', encoding='utf-8')
-                  source_code = HtmlFile.read() 
-                  print(source_code)
-                  components.html(source_code, width=800, height=500, scrolling=True)
+            st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Most Indicative Words"}</h1>', unsafe_allow_html=True)
+            exp.save_to_file('lime.html')
+            HtmlFile = open("lime.html", 'r', encoding='utf-8')
+            source_code = HtmlFile.read() 
+            print(source_code)
+            components.html(source_code, width=800, height=500, scrolling=True)
+
                     
-                  st.balloons()  
-                
-        elif clf_choice == 'Topic Classifier':
-            st.header("Topic Classifier")  
-            if st.button('PREDICT ▶️'):
-                    
-                  topic_names = ['Room View', 'Comfort/Size',
-                                        'Bathroom', 'Facility', 'Service',
-                                        'Food/Dining', 'Stay Experience',
-                                        'Nightlife', 'Location/Access',
-                                        'Internet']
-                  explainer = LimeTextExplainer(class_names=topic_names)
-                  exp = explainer.explain_instance(user_input, 
-                                                    topic_model.predict_proba, 
-                                                    num_features=5, top_labels=3)
+            topic_names = ['Room View', 'Comfort/Size',
+                                'Bathroom', 'Facility', 'Service',
+                                'Food/Dining', 'Stay Experience',
+                                'Nightlife', 'Location/Access',
+                                'Internet']
+            explainer = LimeTextExplainer(class_names=topic_names)
+            exp = explainer.explain_instance(user_input, 
+                                                topic_model.predict_proba, 
+                                                num_features=5, top_labels=3)
 
-                  st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Topics Mentioned"}</h1>', unsafe_allow_html=True)
-                  exp.save_to_file('topic.html', text=False)
-                  HtmlFile = open("topic.html", 'r', encoding='utf-8')
-                  source_code = HtmlFile.read() 
-                  print(source_code)
-                  components.html(source_code, width=800, height=500, scrolling=True)
+            st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Topics Mentioned"}</h1>', unsafe_allow_html=True)
+            exp.save_to_file('topic.html', text=False)
+            HtmlFile = open("topic.html", 'r', encoding='utf-8')
+            source_code = HtmlFile.read() 
+            print(source_code)
+            components.html(source_code, width=800, height=500, scrolling=True)
 
 
-                  st.balloons()
+            st.balloons()
 
               
     elif page == "Topic Modelling":
