@@ -62,7 +62,7 @@ def main():
 
      
     elif page == 'Definition':
-        st.title("Definition of... 😊🙁")
+        st.title("Definition of...")
         pg_choice = st.selectbox("Choose one:", ["Sentiment Analysis", "Multi-Label Topic Classification"])
         
         if pg_choice == "Sentiment Analysis": 
@@ -84,7 +84,7 @@ def main():
 
 
     elif page == "Play with Classifiers":
-      st.title("Sentiment Classifier & Topic Classifier 😊🙁")
+      st.title("Sentiment Classifier & Topic Classifier")
         
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       topic_model = pickle.load(open('streamlit_template/LR_Topic_Label.sav' , 'rb'))
