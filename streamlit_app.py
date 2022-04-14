@@ -92,9 +92,9 @@ def main():
       user_input = st.text_area("Enter a review to predict", "The check in process was straight forward, the room was very comfortable and clean. The staff were great, and the food was excellent too.")
       st.button('PREDICT ▶️')  
     
-      if clf_choice == 'Sentiment Classifier':
-          st.header("Sentiment Classifier")  
-          if st.button('PREDICT ▶️'):
+        if clf_choice == 'Sentiment Classifier':
+            st.header("Sentiment Classifier")  
+            if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
 
                   st.subheader("Sentiment Predicted: ")
@@ -119,9 +119,9 @@ def main():
                     
                   st.balloons()  
                 
-       elif clf_choice == 'Topic Classifier':
-          st.header("Topic Classifier")  
-          if st.button('PREDICT ▶️'):
+        elif clf_choice == 'Topic Classifier':
+            st.header("Topic Classifier")  
+            if st.button('PREDICT ▶️'):
                     
                   topic_names = ['Room View', 'Comfort/Size',
                                         'Bathroom', 'Facility', 'Service',
