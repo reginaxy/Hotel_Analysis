@@ -119,7 +119,7 @@ def main():
                     
                   st.balloons()  
                 
-        elif clf_choice == 'Topic Classifier':
+       elif clf_choice == 'Topic Classifier':
           st.header("Topic Classifier")  
           if st.button('PREDICT ▶️'):
                     
