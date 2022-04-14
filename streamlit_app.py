@@ -78,7 +78,6 @@ def main():
           sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
           user_input = st.text_area("Enter a review to predict", "The check in process was straight forward, the room was very comfortable and clean. The staff were great, and the food was excellent too.")
 
-          topic_options = st.checkbox("View Topic")
           if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
 
@@ -102,26 +101,25 @@ def main():
                   print(source_code)
                   components.html(source_code, width=800, height=800, scrolling=True)
                     
-           if topic_options:
-            topic_names = ['Room View', 'Comfort/Size',
-                                'Bathroom', 'Facility', 'Service',
-                                'Food/Dining', 'Stay Experience',
-                                'Nightlife', 'Location/Access',
-                                'Internet']
-             explainer = LimeTextExplainer(class_names=topic_names)
-             exp = explainer.explain_instance(user_input, 
-                                                        topic_model.predict_proba, 
-                                                        num_features=5, top_labels=3)
-                
-             st.subheader("Topics Mentioned:")
-             exp.save_to_file('topic.html', text=False)
-             HtmlFile = open("topic.html", 'r', encoding='utf-8')
-             source_code = HtmlFile.read() 
-             print(source_code)
-             components.html(source_code, width=800, height=800, scrolling=True)
+                  topic_names = ['Room View', 'Comfort/Size',
+                                        'Bathroom', 'Facility', 'Service',
+                                        'Food/Dining', 'Stay Experience',
+                                        'Nightlife', 'Location/Access',
+                                        'Internet']
+                   explainer = LimeTextExplainer(class_names=topic_names)
+                   exp = explainer.explain_instance(user_input, 
+                                                    topic_model.predict_proba, 
+                                                    num_features=5, top_labels=3)
 
-                  
-             st.balloons()
+                   st.subheader("Topics Mentioned:")
+                   exp.save_to_file('topic.html', text=False)
+                   HtmlFile = open("topic.html", 'r', encoding='utf-8')
+                   source_code = HtmlFile.read() 
+                   print(source_code)
+                   components.html(source_code, width=800, height=800, scrolling=True)
+
+
+                     st.balloons()
 
               
     elif page == "Topic Modelling":
