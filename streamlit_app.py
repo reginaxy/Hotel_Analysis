@@ -18,6 +18,7 @@ from lime.lime_text import LimeTextExplainer
 
 def main():
     st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.markdown('<style>body{background-color: Grey;}</style>',unsafe_allow_html=True)
 
     st.sidebar.title("About")
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
