@@ -78,11 +78,28 @@ def main():
                   a = sent_model.predict([user_input])[0]
                   b = sent_model.predict_proba([user_input])[0]
 
-                  st.write("Sentiment Predicted: ")
-                  st.subheader(f"**{a}**")
-                  st.write("Sentiment Score [Neg vs Pos probability]: ")
-                  st.subheader(f"**{b}**")
+                  st.subheader("Sentiment Predicted: ")
+                  if a == 'Positive':
+                    st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
+                      
+                  elif a == 'Negative':
+                    st.markdown(f'<h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
+                    
                   st.balloons()
+                
+                  class_names = ['negative', 'positive']
+                  explainer = LimeTextExplainer(class_names=class_names)
+                  exp = explainer.explain_instance(user_input, 
+                                                        sent_model.predict_proba, 
+                                                        num_features=20)
+                  
+                  st.subheader("Indicative Words:")
+                  exp.save_to_file('lime.html')
+                  HtmlFile = open("lime.html", 'r', encoding='utf-8')
+                  source_code = HtmlFile.read() 
+                  print(source_code)
+                  components.html(source_code, width=800, height=800, scrolling=True)
+                  
 
               
     elif page == "Topic Modelling":
