@@ -85,7 +85,7 @@ def main():
                   elif a == 'Negative':
                     st.markdown(f'<h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
                     
-                  st.balloons()
+                  
                 
                   class_names = ['negative', 'positive']
                   explainer = LimeTextExplainer(class_names=class_names)
@@ -100,6 +100,7 @@ def main():
                   print(source_code)
                   components.html(source_code, width=800, height=800, scrolling=True)
                   
+                  st.balloons()
 
               
     elif page == "Topic Modelling":
