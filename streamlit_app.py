@@ -18,7 +18,7 @@ from lime.lime_text import LimeTextExplainer
 
 def main():
     {
-    "primaryColor": "Blue"
+    "primaryColor": "Blue",
     "backgroundColor": "Blue",
     "secondaryBackgroundColor": "Green",
     "textColor": "Black"
