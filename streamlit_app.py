@@ -17,13 +17,8 @@ import lime
 from lime.lime_text import LimeTextExplainer
 
 def main():
-    
-    <style>
-  body {
-    background-color: lightgrey;
-  }
 
-  </style>
+    st.markdown("<span style=“background-color:#121922”>",unsafe_allow_html=True)
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     st.sidebar.title("About")
