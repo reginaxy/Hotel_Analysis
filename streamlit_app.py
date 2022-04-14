@@ -101,27 +101,27 @@ def main():
                   source_code = HtmlFile.read() 
                   print(source_code)
                   components.html(source_code, width=800, height=800, scrolling=True)
-             
-            if topic_options:
-                  topic_names = ['Room View', 'Comfort/Size',
+                    
+           if topic_options:
+            topic_names = ['Room View', 'Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
                                 'Nightlife', 'Location/Access',
                                 'Internet']
-                  explainer = LimeTextExplainer(class_names=topic_names)
-                  exp = explainer.explain_instance(user_input, 
+             explainer = LimeTextExplainer(class_names=topic_names)
+             exp = explainer.explain_instance(user_input, 
                                                         topic_model.predict_proba, 
                                                         num_features=5, top_labels=3)
                 
-                  st.subheader("Topics Mentioned:")
-                  exp.save_to_file('topic.html', text=False)
-                  HtmlFile = open("topic.html", 'r', encoding='utf-8')
-                  source_code = HtmlFile.read() 
-                  print(source_code)
-                  components.html(source_code, width=800, height=800, scrolling=True)
+             st.subheader("Topics Mentioned:")
+             exp.save_to_file('topic.html', text=False)
+             HtmlFile = open("topic.html", 'r', encoding='utf-8')
+             source_code = HtmlFile.read() 
+             print(source_code)
+             components.html(source_code, width=800, height=800, scrolling=True)
 
                   
-                  st.balloons()
+             st.balloons()
 
               
     elif page == "Topic Modelling":
