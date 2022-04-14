@@ -76,7 +76,11 @@ def main():
       elif sent_choice == 'Sentiment Classifier':
           st.header("Sentiment Classifier")  
           sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
-          user_input = st.text_area("Enter a review to predict", "I loved the trip!")
+          user_input = st.text_area("Enter a review to predict", "Stayed for 2 nights at the hotel, and have to say, i cannot fault this place.\
+                       The check in process was straight forward, and as for the room, it was everything , plus more that you can ask for, \
+                       as the view over loch long and the hills was breathtaking.\
+                       The staff were great, and the food was excellent too.\
+                       Would definatly recommend, and will be back in the near future.")
           if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
 
