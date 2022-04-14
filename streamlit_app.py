@@ -16,13 +16,14 @@ from PIL import Image
 import lime
 from lime.lime_text import LimeTextExplainer
 
-def main():
     {
     "primaryColor": "Blue",
     "backgroundColor": "Blue",
     "secondaryBackgroundColor": "Green",
     "textColor": "Black"
     }
+
+def main():
     
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
