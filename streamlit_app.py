@@ -84,10 +84,10 @@ def main():
 
                   st.subheader("Sentiment Predicted: ")
                   if a == 'Positive':
-                    st.markdown(f'<h1 style="color:#33ff33;text-align: center;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
+                    st.markdown(f'<h1 style="color:#33ff33;font-size:20px;">{"Positive"}</h1>', unsafe_allow_html=True)
                       
                   elif a == 'Negative':
-                    st.markdown(f'<h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
+                    st.markdown(f'<h1 style="color:#ff0000;font-size:20px;">{"Negative"}</h1>', unsafe_allow_html=True)
                     
                   class_names = ['negative', 'positive']
                   explainer = LimeTextExplainer(class_names=class_names)
@@ -95,7 +95,7 @@ def main():
                                                         sent_model.predict_proba, 
                                                         num_features=10)
                   
-                  st.subheader("Indicative Sentiment Words:")
+                  st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Indicative Words"}</h1>', unsafe_allow_html=True)
                   exp.save_to_file('lime.html')
                   HtmlFile = open("lime.html", 'r', encoding='utf-8')
                   source_code = HtmlFile.read() 
@@ -112,7 +112,7 @@ def main():
                                                     topic_model.predict_proba, 
                                                     num_features=5, top_labels=3)
 
-                  st.subheader("Topics Mentioned:")
+                  st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Topics Mentioned"}</h1>', unsafe_allow_html=True)
                   exp.save_to_file('topic.html', text=False)
                   HtmlFile = open("topic.html", 'r', encoding='utf-8')
                   source_code = HtmlFile.read() 
