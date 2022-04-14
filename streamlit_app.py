@@ -32,8 +32,6 @@ def main():
     page = st.sidebar.radio("Choose a page", ["Homepage", "Power BI Dashboard", "Definition", "Play with Classifiers"])
 
     if page == "Homepage":
-        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:28px;">{"Introduction"}</h1>', unsafe_allow_html=True)
-        
         st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Problem Statement"}</h1>', unsafe_allow_html=True)
  
         st.write("With the rich amount of information that can be captured through customer reviews, it would be a huge loss if hotel managers chooses to ignore them.\
@@ -61,7 +59,7 @@ def main():
 
 
     elif page == "Power BI Dashboard":
-        st.title("Power BI Dashboard 📊")
+        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Power BI Dashboard 📊"}</h1>', unsafe_allow_html=True)
         link='Link to original dashboard: [click here](https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)'
         st.markdown(link,unsafe_allow_html=True)
         st.markdown('<iframe title="Hotel (Web version) plus" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)     
@@ -72,7 +70,7 @@ def main():
         pg_choice = st.selectbox("Choose one:", ["Sentiment Analysis", "Multi-Label Topic Classification"])
         
         if pg_choice == "Sentiment Analysis": 
-            st.header("What is Sentiment Analysis?")
+            st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"What is Sentiment Analysis?"}</h1>', unsafe_allow_html=True)
             image = Image.open("streamlit_template/SA.png")
             st.image(image, caption='Sentiment Analysis')
             st.write("Sentiment analysis is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
@@ -80,7 +78,7 @@ def main():
             consumer feedback and better understand customer demands.")    
     
         elif pg_choice == 'Multi-Label Topic Classification':
-            st.header("What is Multi-Label Topic Classification?")
+            st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"What is Multi-Label Topic Classification?"}</h1>', unsafe_allow_html=True)
             image = Image.open("streamlit_template/topic_class.png")
             st.image(image, caption='Topic Classification')
             st.write("Multi-label classification is an artificial intelligence text analysis approach that labels (or tags) text to categorise it by subject. Multi-label classification differs from multi-class classification in that it may apply many classification tags to a single text.\
@@ -90,7 +88,7 @@ def main():
 
 
     elif page == "Play with Classifiers":
-      st.title("Sentiment Classifier & Topic Classifier")
+      st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Sentiment & Topic Classifier"}</h1>', unsafe_allow_html=True)
         
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       topic_model = pickle.load(open('streamlit_template/LR_Topic_Label.sav' , 'rb'))
