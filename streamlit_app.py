@@ -23,7 +23,7 @@ def main():
     st.sidebar.title("About")
     html_temp = """
     <div style="background-color:Blue;padding:1.5px">
-    <h1 style="color:white;text-align:center;">Demo Web App </h1>
+    <h1 style="color:white;text-align:center;">Hotel Customer Reviews Analysis </h1>
     </div><br>"""
     st.markdown(html_temp,unsafe_allow_html=True)
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
@@ -32,9 +32,9 @@ def main():
     page = st.sidebar.radio("Choose a page", ["Homepage", "Power BI Dashboard", "Definition", "Play with Classifiers"])
 
     if page == "Homepage":
-        st.title("Introduction of the Project")
+        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:28px;">{"Introduction"}</h1>', unsafe_allow_html=True)
         
-        st.header("Problem Statement")
+        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Problem Statement"}</h1>', unsafe_allow_html=True)
  
         st.write("With the rich amount of information that can be captured through customer reviews, it would be a huge loss if hotel managers chooses to ignore them.\
         By conducting a detailed analysis on the customer reviews, it may present a wider picture about the hotel’s brand, and guarantees that the 'small things' \
@@ -45,17 +45,17 @@ def main():
         analyse and discover anomalies, trends or patterns by going through every single one of them. Hence, the introduction of certain tools, techniques, and expertise \
         would be able to accelerate this time consuming process.") 
         
-        st.header("Objective")
+        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Objective"}</h1>', unsafe_allow_html=True)
                  
         st.write("To perform an analysis on a European Luxury Hotel Reviews dataset using suitable analytics tools and techniques.")
         st.write("**Dataset to be analyzed:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
         
-        st.header("Deliverables")
+        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Deliverables"}</h1>', unsafe_allow_html=True)
         st.write("1. An interactive Power BI Dashboard to visualize useful findings from the dataset. \n"
                  "2. Sentiment Analysis on the reviews, including a Sentiment Classifier using a suitable Machine Learning (ML) Algorithm. \n"
                  "3. Multi-Label Topic Classifier to discover the most mentioned topics in the reviews.\n")
         
-        st.header("Data Analytics Process")
+        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Data Analytics Process"}</h1>', unsafe_allow_html=True)
         image = Image.open("streamlit_template/Analytics Process new.png")
         st.image(image, caption='Data Analytics Process')
 
