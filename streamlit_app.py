@@ -16,15 +16,14 @@ from PIL import Image
 import lime
 from lime.lime_text import LimeTextExplainer
 
-<style>
-body {
-  background-color: lightgrey;
-}
-
-</style>
-
 def main():
     
+    <style>
+  body {
+    background-color: lightgrey;
+  }
+
+  </style>
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     st.sidebar.title("About")
