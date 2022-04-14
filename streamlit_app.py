@@ -79,7 +79,6 @@ def main():
           user_input = st.text_area("Enter a review to predict", "I loved the trip!")
           if st.button('PREDICT ▶️'):
                   a = sent_model.predict([user_input])[0]
-                  b = sent_model.predict_proba([user_input])[0]
 
                   st.subheader("Sentiment Predicted: ")
                   if a == 'Positive':
@@ -88,8 +87,6 @@ def main():
                   elif a == 'Negative':
                     st.markdown(f'<h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
                     
-                  
-                
                   class_names = ['negative', 'positive']
                   explainer = LimeTextExplainer(class_names=class_names)
                   exp = explainer.explain_instance(user_input, 
@@ -103,7 +100,7 @@ def main():
                   print(source_code)
                   components.html(source_code, width=800, height=800, scrolling=True)
                   
-                  st.balloons()
+#                   st.balloons()
 
               
     elif page == "Topic Modelling":
