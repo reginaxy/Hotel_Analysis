@@ -93,14 +93,14 @@ def main():
                   explainer = LimeTextExplainer(class_names=class_names)
                   exp = explainer.explain_instance(user_input, 
                                                         sent_model.predict_proba, 
-                                                        num_features=20)
+                                                        num_features=10)
                   
                   st.subheader("Indicative Sentiment Words:")
                   exp.save_to_file('lime.html')
                   HtmlFile = open("lime.html", 'r', encoding='utf-8')
                   source_code = HtmlFile.read() 
                   print(source_code)
-                  components.html(source_code, width=800, height=800, scrolling=True)
+                  components.html(source_code, width=800, height=500, scrolling=True)
                     
                   topic_names = ['Room View', 'Comfort/Size',
                                         'Bathroom', 'Facility', 'Service',
@@ -117,7 +117,7 @@ def main():
                   HtmlFile = open("topic.html", 'r', encoding='utf-8')
                   source_code = HtmlFile.read() 
                   print(source_code)
-                  components.html(source_code, width=800, height=800, scrolling=True)
+                  components.html(source_code, width=800, height=500, scrolling=True)
 
 
                   st.balloons()
