@@ -101,7 +101,7 @@ def main():
                   print(source_code)
                   components.html(source_code, width=800, height=800, scrolling=True)
                     
-                   topic_names = ['Room View', 'Comfort/Size',
+                  topic_names = ['Room View', 'Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
                                 'Nightlife', 'Location/Access',
