@@ -23,7 +23,7 @@ def main():
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
 
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Choose a page", ["Homepage", "Power BI Dashboard", "Sentiment Analysis", "Topic Modelling"])
+    page = st.sidebar.radio("Choose a page", ["Homepage", "Power BI Dashboard", "Classifier", "Topic Modelling"])
 
     if page == "Homepage":
         st.title("Introduction of the Project")
@@ -60,9 +60,9 @@ def main():
         st.markdown(link,unsafe_allow_html=True)
         st.markdown('<iframe title="Hotel (Web version) plus" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)     
 
-    elif page == "Sentiment Analysis":
-      st.title("Sentiment Analysis 😊🙁")
-      sent_choice = st.selectbox("Choose one:", ["What is Sentiment Analysis?", "Sentiment Classifier"])
+    elif page == "Classifier":
+      st.title("Sentiment Analysis & Topic Classification 😊🙁")
+      sent_choice = st.selectbox("Choose one:", ["What is Sentiment Analysis?", "What is Multi-Label Topic Classification?", "Classifier"])
         
       if sent_choice == 'What is Sentiment Analysis?':
         st.header("What is Sentiment Analysis?")
@@ -71,10 +71,19 @@ def main():
         st.write("Sentiment analysis is a natural language processing (NLP) approach for determining the positivity, negativity, or neutrality of data. \
         Sentiment analysis is frequently used on textual data to assist organizations in tracking brand and product sentiment in \
         consumer feedback and better understand customer demands.")
-       
+        
+      elif sent_choice == 'What is Multi-Label Topic Classification?':
+        st.header("What is Multi-Label Topic Classification?")
+        image = Image.open("streamlit_template/topic_class.png")
+        st.image(image, caption='Topic Classification')
+        st.write("Multi-label classification is an artificial intelligence text analysis approach that labels (or tags) text to categorise it by subject. Multi-label classification differs from multi-class classification in that it may apply many classification tags to a single text.\
+        Multi-label classification can help categorise text data under specified tags, such as customer service, price, and so on, by using machine learning and natural language processing to automatically evaluate text (reviews, news articles, emails, social media, and so on).\
+        When analysing large quantities of text for businesses, it may be a major time saver.\
+        It may be used to assign subjects to customer reviews and urgency tags to emails or customer care problems, for example, so that they can be sent to the right department or prioritised.")
+      
     
-      elif sent_choice == 'Sentiment Classifier':
-          st.header("Sentiment Classifier")  
+      elif sent_choice == 'Classifier':
+          st.header("Classifier")  
           sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
           topic_model = pickle.load(open('streamlit_template/LR_Topic_Label.sav' , 'rb'))
           user_input = st.text_area("Enter a review to predict", "The check in process was straight forward, the room was very comfortable and clean. The staff were great, and the food was excellent too.")
@@ -84,10 +93,10 @@ def main():
 
                   st.subheader("Sentiment Predicted: ")
                   if a == 'Positive':
-                    st.markdown(f'<h1 style="color:#33ff33;font-size:20px;">{"Positive"}</h1>', unsafe_allow_html=True)
+                    st.markdown(f'<h1 style="color:#33ff33;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
                       
                   elif a == 'Negative':
-                    st.markdown(f'<h1 style="color:#ff0000;font-size:20px;">{"Negative"}</h1>', unsafe_allow_html=True)
+                    st.markdown(f'<h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
                     
                   class_names = ['negative', 'positive']
                   explainer = LimeTextExplainer(class_names=class_names)
@@ -95,7 +104,7 @@ def main():
                                                         sent_model.predict_proba, 
                                                         num_features=10)
                   
-                  st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Indicative Words"}</h1>', unsafe_allow_html=True)
+                  st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Most Indicative Words"}</h1>', unsafe_allow_html=True)
                   exp.save_to_file('lime.html')
                   HtmlFile = open("lime.html", 'r', encoding='utf-8')
                   source_code = HtmlFile.read() 
