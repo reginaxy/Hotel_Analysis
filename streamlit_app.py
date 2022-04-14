@@ -22,8 +22,8 @@ def main():
 
     st.sidebar.title("About")
     html_temp = """
-    <div style="background-color:Blue;padding:1.5px">
-    <h1 style="color:white;text-align:center;">Hotel Customer Reviews Analysis </h1>
+    <div style="background-color:Blue;padding:1px">
+    <h1 style="color:white;text-align:center;">Customer Reviews Analysis of the Hotel Industry</h1>
     </div><br>"""
     st.markdown(html_temp,unsafe_allow_html=True)
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
@@ -59,7 +59,7 @@ def main():
 
 
     elif page == "Power BI Dashboard":
-        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Power BI Dashboard 📊"}</h1>', unsafe_allow_html=True)
+        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:30px;">{"Power BI Dashboard 📊"}</h1>', unsafe_allow_html=True)
         link='Link to original dashboard: [click here](https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)'
         st.markdown(link,unsafe_allow_html=True)
         st.markdown('<iframe title="Hotel (Web version) plus" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)     
