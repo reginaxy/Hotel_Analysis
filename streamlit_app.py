@@ -23,7 +23,7 @@ def main():
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
 
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Choose a page", ["Homepage", "Power BI Dashboard", "Definition", "**Classifiers**"])
+    page = st.sidebar.radio("Choose a page", ["Homepage", "Power BI Dashboard", "Definition", "Play with Classifiers"])
 
     if page == "Homepage":
         st.title("Introduction of the Project")
@@ -83,7 +83,7 @@ def main():
             It may be used to assign subjects to customer reviews and urgency tags to emails or customer care problems, for example, so that they can be sent to the right department or prioritised.")
 
 
-    elif page == "Classifiers":
+    elif page == "Play with Classifiers":
       st.title("Sentiment Classifier & Topic Classifier 😊🙁")
         
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
