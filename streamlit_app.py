@@ -43,7 +43,7 @@ def main():
         st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:30px;">{"Power BI Dashboard 📊"}</h1>', unsafe_allow_html=True)
         link='Link to original dashboard: [click here](https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)'
         st.markdown(link,unsafe_allow_html=True)
-        st.markdown('<iframe title="Hotel (Web version) plus" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)     
+        st.markdown('<iframe title="Hotel (Web version) plus" width="700" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)     
 
      
     elif page == "Sentiment & Topic Classifier":
