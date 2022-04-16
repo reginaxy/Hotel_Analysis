@@ -56,7 +56,7 @@ def main():
       if st.button('PREDICT ▶️'):
             a = sent_model.predict([user_input])[0]
 
-             st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Sentiment Predicted:"}</h1>', unsafe_allow_html=True)
+            st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Sentiment Predicted:"}</h1>', unsafe_allow_html=True)
             if a == 'Positive':
                 st.markdown(f'<div style="background-color:Grey;padding:2px"><h1 style="color:#33ff33;text-align:center;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
                       
