@@ -47,7 +47,7 @@ def main():
 
      
     elif page == "Sentiment & Topic Classifier":
-      st.markdown(f'<div style="background-color:Grey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:45px;">{"Sentiment & Topic Classifier      😄🙁🗣️"}</h1>', unsafe_allow_html=True)
+      st.markdown(f'<div style="background-color:Grey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:45px;">{"Sentiment & Topic Classifier \n😄🙁🗣️"}</h1>', unsafe_allow_html=True)
         
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       topic_model = pickle.load(open('streamlit_template/LR_Topic_Label.sav' , 'rb'))
