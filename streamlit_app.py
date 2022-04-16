@@ -63,10 +63,10 @@ def main():
 
             st.subheader("Sentiment Predicted: ")
             if a == 'Positive':
-                st.markdown(f'<div style="background-color:Grey;padding:1px"><h1 style="color:#33ff33;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
+                st.markdown(f'<div style="background-color:LightGrey;padding:1px"><h1 style="color:#33ff33;text-align:center;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
                       
             elif a == 'Negative':
-                st.markdown(f'<div style="background-color:Grey;padding:1px"><h1 style="color:#ff0000;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
+                st.markdown(f'<div style="background-color:LightGrey;padding:1px"><h1 style="color:#ff0000;text-align:center;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
                     
             class_names = ['negative', 'positive']
             explainer = LimeTextExplainer(class_names=class_names)
