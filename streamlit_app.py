@@ -16,9 +16,10 @@ def main():
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
 
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Choose a page", ["Sentiment & Topic Classifier", "Power BI Dashboard", "About the Project"])
+    page = st.sidebar.radio("Choose a page", ["About", "Power BI Dashboard", "Sentiment & Topic Classifier"])
 
     if page == "About the Project":
+        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:45px;">{"About"}</h1>', unsafe_allow_html=True)
         st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Problem Statement"}</h1>', unsafe_allow_html=True)
  
         st.write("With the rich amount of information that can be captured through customer reviews, it would be a huge loss if hotel managers chooses to ignore them.\
