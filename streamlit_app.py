@@ -16,7 +16,7 @@ def main():
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
 
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Choose a page", ["About", "Power BI Dashboard", "Sentiment & Topic Classifier"])
+    page = st.sidebar.radio("Choose a page", ["About the Project", "Power BI Dashboard", "Sentiment & Topic Classifier"])
 
     if page == "About the Project":
         st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:45px;">{"About"}</h1>', unsafe_allow_html=True)
