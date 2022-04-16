@@ -47,7 +47,7 @@ def main():
 
      
     elif page == "Sentiment & Topic Classifier":
-      st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:30px;">{"Sentiment & Topic Classifier"}</h1>', unsafe_allow_html=True)
+      st.markdown(f'<div style="background-color:Grey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:45px;">{"Sentiment & Topic Classifier 😄🙁🗣️"}</h1>', unsafe_allow_html=True)
         
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       topic_model = pickle.load(open('streamlit_template/LR_Topic_Label.sav' , 'rb'))
@@ -56,7 +56,7 @@ def main():
       if st.button('PREDICT ▶️'):
             a = sent_model.predict([user_input])[0]
 
-            st.markdown(f'<div style="background-color:Grey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Sentiment Predicted:"}</h1>', unsafe_allow_html=True)
+            st.markdown(f'<div style="background-color:LightGrey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Sentiment Predicted:"}</h1>', unsafe_allow_html=True)
             if a == 'Positive':
                 st.markdown(f'<h1 style="color:#33ff33;text-align:center;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
                       
@@ -69,7 +69,7 @@ def main():
                                                         sent_model.predict_proba, 
                                                         num_features=10)
                   
-            st.markdown(f'<div style="background-color:Grey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Most Indicative Words"}</h1>', unsafe_allow_html=True)
+            st.markdown(f'<div style="background-color:LightGrey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Most Indicative Words"}</h1>', unsafe_allow_html=True)
             exp.save_to_file('lime.html')
             HtmlFile = open("lime.html", 'r', encoding='utf-8')
             source_code = HtmlFile.read() 
@@ -87,7 +87,7 @@ def main():
                                                 topic_model.predict_proba, 
                                                 num_features=5, top_labels=3)
 
-            st.markdown(f'<div style="background-color:Grey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Topics Mentioned"}</h1>', unsafe_allow_html=True)
+            st.markdown(f'<div style="background-color:LightGrey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Topics Mentioned"}</h1>', unsafe_allow_html=True)
             exp.save_to_file('topic.html', text=False)
             HtmlFile = open("topic.html", 'r', encoding='utf-8')
             source_code = HtmlFile.read() 
