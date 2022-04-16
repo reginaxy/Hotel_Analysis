@@ -13,7 +13,6 @@ def main():
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     st.sidebar.title("About")
-    st.markdown(html_temp,unsafe_allow_html=True)
     st.sidebar.info("Analysis of European Hotel Reviews Dataset")
 
     st.sidebar.title("Navigation")
