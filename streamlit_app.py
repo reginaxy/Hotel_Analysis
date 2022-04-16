@@ -51,7 +51,7 @@ def main():
         
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       topic_model = pickle.load(open('streamlit_template/LR_Topic_Label.sav' , 'rb'))
-      user_input = st.text_area("Enter a review to predict", "The check in process was straight forward, the room was very comfortable and clean. The staff were great, and the food was excellent too.")
+      user_input = st.text_area("Enter a review to predict:", "The check in process was straight forward, the room was very comfortable and clean. The staff were great, and the food was excellent too.")
 
       if st.button('PREDICT ▶️'):
             a = sent_model.predict([user_input])[0]
