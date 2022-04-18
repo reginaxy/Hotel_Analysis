@@ -81,6 +81,9 @@ def main():
             if b == 'Room_view_related':
                 category = "Room View"
                 st.write("{'result': category}")
+            elif b == 'Service_related':
+                category = "Service"
+                st.write("{'result': category}")
             topic_names = ['Room View', 'Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
