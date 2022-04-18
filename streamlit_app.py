@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 import numpy as np
+import heapq
 
 import pickle
 
@@ -89,8 +90,13 @@ def main():
                                 'Internet']
             
             class_labels=[topic_names[i] for i,prob in enumerate(y_pred) if prob > 0.5]
-#             label = st.subheader(class_labels)
             st.markdown(f'<h1 style="color:blue;text-align:center;font-size:24px;">{class_labels}</h1>', unsafe_allow_html=True)
+            
+            x = np.array([y_pred])
+            z = heapq.nlargest(3,x)
+            class_labels=[topic_names[i] for i,prob in enumerate(z)]
+            st.markdown(f'<h1 style="color:blue;text-align:center;font-size:24px;">{class_labels}</h1>', unsafe_allow_html=True)
+
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
                                                 topic_model.predict_proba, 
