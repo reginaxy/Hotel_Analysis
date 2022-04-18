@@ -88,7 +88,7 @@ def main():
                                 'Internet']
             
             class_labels=[topic_names[i] for i,prob in enumerate(y_pred) if prob > 0.5]
-            st.write(class_labels, y_pred[class_labels])
+            st.write(class_labels, y_pred)
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
                                                 topic_model.predict_proba, 
