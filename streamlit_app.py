@@ -79,7 +79,6 @@ def main():
             print(source_code)
             components.html(source_code, width=700, height=500, scrolling=True)
 
-            b = topic_model.predict([user_input])[0]
             y_pred = topic_model.predict_proba([user_input])[0]
             
             topic_names = ['Room View', 'Comfort/Size',
@@ -88,10 +87,8 @@ def main():
                                 'Nightlife', 'Location/Access',
                                 'Internet']
             
-            topics = topic_names[np.argmax(y_pred)]
             class_labels=[topic_names[i] for i,prob in enumerate(y_pred) if prob > 0.5]
-            st.write(topics)
-            st.write(class_labels)
+            st.write(class_labels, y_pred[class_labels])
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
                                                 topic_model.predict_proba, 
