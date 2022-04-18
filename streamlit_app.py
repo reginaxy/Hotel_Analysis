@@ -1,6 +1,8 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
+import numpy as np
+
 import pickle
 
 from PIL import Image
@@ -78,12 +80,14 @@ def main():
             components.html(source_code, width=700, height=500, scrolling=True)
 
             b = topic_model.predict([user_input])[0]
-            st.write(b)
+            
             topic_names = ['Room View', 'Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
                                 'Nightlife', 'Location/Access',
                                 'Internet']
+            topics = topic_names[np.argmax(predictions)]
+            st.write(topics)
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
                                                 topic_model.predict_proba, 
