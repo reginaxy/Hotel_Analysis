@@ -103,7 +103,14 @@ def main():
             HtmlFile = open("topic.html", 'r', encoding='utf-8')
             source_code = HtmlFile.read() 
             print(source_code)
-            components.html(source_code, width=500, height=500, justify-content: center, scrolling=True)
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.write(' ')
+            with col2:
+                components.html(source_code, width=500, height=500,scrolling=True)
+            with col3:
+                st.write(' ')
+#             components.html(source_code, width=500, height=500,scrolling=True)
 
 
             st.balloons()
