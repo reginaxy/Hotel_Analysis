@@ -78,12 +78,12 @@ def main():
             components.html(source_code, width=700, height=500, scrolling=True)
 
             b = topic_model.predict([user_input])[0]
-            topic_names = ['Room View', 'Comfort/Size',
+            
+            st.write(topic_names = ['Room View', 'Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
                                 'Nightlife', 'Location/Access',
-                                'Internet']
-            st.write(topic_names, b)
+                                'Internet'], b)
             topic_names = ['Room View', 'Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
