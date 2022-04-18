@@ -88,7 +88,7 @@ def main():
                                 'Nightlife', 'Location/Access',
                                 'Internet']
             
-            topics = topic_names[np.argmax(predictions)]
+            topics = topic_names[np.argmax(y_pred)]
             class_labels=[topic_names[i] for i,prob in enumerate(y_pred) if prob > 0.5]
             st.write(topics)
             st.write(class_labels)
