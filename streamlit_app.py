@@ -77,7 +77,7 @@ def main():
             print(source_code)
             components.html(source_code, width=700, height=500, scrolling=True)
 
-            b = topic_model.predict([user_input])[0]
+            b = topic_model.predict([user_input])
             if b == 'Room_view_related':
                 st.write("result: Room View")
             elif b == 'Service_related':
