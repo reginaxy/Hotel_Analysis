@@ -80,15 +80,15 @@ def main():
             components.html(source_code, width=700, height=500, scrolling=True)
 
             st.markdown(f'<div style="background-color:LightGrey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Dominant Topic(s)"}</h1>', unsafe_allow_html=True)
-            y_pred = topic_model.predict_proba([user_input])[0]
+            y_pred = topic_model.predict([user_input])[0]
             
             topic_names = ['Room View', 'Room Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
                                 'Nightlife', 'Location/Access',
                                 'Internet']
-            
-            class_labels=[topic_names[i] for i,prob in enumerate(y_pred) if prob > 0.5]
+
+            class_labels=[topic_names[i] for i,no in enumerate(y_pred) if no == 1]
 
             st.markdown(f'<h1 style="color:blue;text-align:center;font-size:24px;">{class_labels}</h1>', unsafe_allow_html=True)
             
