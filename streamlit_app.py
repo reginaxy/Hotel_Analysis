@@ -80,13 +80,15 @@ def main():
             components.html(source_code, width=700, height=500, scrolling=True)
 
             b = topic_model.predict([user_input])[0]
+            y_pred = topic_model.predict_proba([user_input])[0]
             
             topic_names = ['Room View', 'Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
                                 'Nightlife', 'Location/Access',
                                 'Internet']
-            topics = topic_names[np.argmax(b)]
+            
+            topics = topic_names[np.argmax(b) for i,prob in enumerate(y_pred) if prob > 0.5]
             st.write(topics)
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
