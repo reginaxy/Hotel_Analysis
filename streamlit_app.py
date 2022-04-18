@@ -103,7 +103,7 @@ def main():
             HtmlFile = open("topic.html", 'r', encoding='utf-8')
             source_code = HtmlFile.read() 
             print(source_code)
-            components.html(source_code, width=700, height=500, scrolling=True)
+            components.html(source_code, width=500, height=500, scrolling=True)
 
 
             st.balloons()
