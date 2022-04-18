@@ -88,7 +88,7 @@ def main():
                                 'Nightlife', 'Location/Access',
                                 'Internet']
             
-            topics = topic_names[np.argmax(b) for i,prob in enumerate(y_pred) if prob > 0.5]
+            topics = topic_names[labels[i] for i,prob in enumerate(y_pred) if prob > 0.5]
             st.write(topics)
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
