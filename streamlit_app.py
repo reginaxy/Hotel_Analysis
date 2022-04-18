@@ -94,8 +94,9 @@ def main():
             
             x = np.array([y_pred])
             z = heapq.nlargest(3,x)
-            class_labels=[topic_names[i] for i in z]
-            st.markdown(f'<h1 style="color:blue;text-align:center;font-size:24px;">{class_labels}</h1>', unsafe_allow_html=True)
+            st.write(topic_names[z])
+#             class_labels=[topic_names[i] for i in z]
+#             st.markdown(f'<h1 style="color:blue;text-align:center;font-size:24px;">{class_labels}</h1>', unsafe_allow_html=True)
 
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
