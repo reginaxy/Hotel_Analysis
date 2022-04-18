@@ -79,11 +79,9 @@ def main():
 
             b = topic_model.predict([user_input])[0]
             if b == 'Room_view_related':
-                category = "Room View"
-                st.write("{'result': category}")
+                st.write("result: Room View")
             elif b == 'Service_related':
-                category = "Service"
-                st.write("{'result': category}")
+                st.write("result: Service")
             topic_names = ['Room View', 'Comfort/Size',
                                 'Bathroom', 'Facility', 'Service',
                                 'Food/Dining', 'Stay Experience',
