@@ -86,7 +86,7 @@ def main():
                                 'Food/Dining', 'Stay Experience',
                                 'Nightlife', 'Location/Access',
                                 'Internet']
-            topics = topic_names[np.argmax(predictions)]
+            topics = topic_names[np.argmax(b)]
             st.write(topics)
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
