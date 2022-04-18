@@ -90,7 +90,7 @@ def main():
             
             class_labels=[topic_names[i] for i,prob in enumerate(y_pred) if prob > 0.5]
             label = st.subheader(class_labels)
-            st.markdown(f'<h1 style="color:#ff0000;text-align:center;font-size:24px;">{"label"}</h1>', unsafe_allow_html=True)
+            st.markdown(f'<h1 style="color:#ff0000;text-align:center;font-size:24px;">{label}</h1>', unsafe_allow_html=True)
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
                                                 topic_model.predict_proba, 
