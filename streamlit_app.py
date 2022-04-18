@@ -91,7 +91,7 @@ def main():
             
             class_labels=[topic_names[i] for i,prob in enumerate(y_pred) if prob > 0.5]
             
-            if y_pred <= 0.5:
+            if prob in enumerate(y_pred) <= 0.5:
                 st.markdown("undefined")
             else:
                 st.markdown(f'<h1 style="color:blue;text-align:center;font-size:24px;">{class_labels}</h1>', unsafe_allow_html=True)
