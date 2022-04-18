@@ -95,7 +95,7 @@ def main():
             explainer = LimeTextExplainer(class_names=topic_names)
             exp = explainer.explain_instance(user_input, 
                                                 topic_model.predict_proba, 
-                                                num_features=5, top_labels=3)
+                                                num_features=5, top_labels=5)
 
             st.markdown(f'<div style="background-color:LightGrey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Topics Mentioned"}</h1>', unsafe_allow_html=True)
             exp.save_to_file('topic.html', text=False)
@@ -106,7 +106,7 @@ def main():
             with col1:
                 st.write(' ')
             with col2:
-                components.html(source_code, width=400, height=800,scrolling=True)
+                components.html(source_code, width=400, height=1200,scrolling=True)
             with col3:
                 st.write(' ')
 
