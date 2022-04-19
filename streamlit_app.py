@@ -79,7 +79,7 @@ def main():
             print(source_code)
             components.html(source_code, width=700, height=500, scrolling=True)
 
-            st.markdown(f'<div style="background-color:LightGrey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Topic(s) Mentioned:"}</h1>', unsafe_allow_html=True)
+            st.markdown(f'<div style="background-color:LightBlue;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Topic(s) Mentioned:"}</h1>', unsafe_allow_html=True)
             y_pred = topic_model.predict([user_input])[0]
             
             topic_names = ['View', 'Comfort/Size',
@@ -97,7 +97,7 @@ def main():
                                                 topic_model.predict_proba, 
                                                 num_features=5, top_labels=5)
 
-            st.markdown(f'<div style="background-color:LightGrey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Most Indicative Words"}</h1>', unsafe_allow_html=True)
+            st.markdown(f'<div style="background-color:LightBlue;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Most Indicative Words"}</h1>', unsafe_allow_html=True)
             exp.save_to_file('topic.html', text=False)
             HtmlFile = open("topic.html", 'r', encoding='utf-8')
             source_code = HtmlFile.read() 
