@@ -38,7 +38,7 @@ def main():
         st.write("**Link:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
         
         st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Data Analytics Process"}</h1>', unsafe_allow_html=True)
-        image = Image.open("streamlit_template/Analytics Process new.png")
+        image = Image.open("streamlit_template/FYP Data Pipeline (2).png")
         st.image(image, caption='Data Analytics Process')
 
 
