@@ -76,8 +76,21 @@ def main():
             exp.save_to_file('lime.html')
             HtmlFile = open("lime.html", 'r', encoding='utf-8')
             source_code = HtmlFile.read() 
-            print(source_code)
-            components.html(source_code, width=700, height=500, scrolling=True)
+#             print(source_code)
+#             components.html(source_code, width=700, height=500, scrolling=True)
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.markdown(f'<div style="background-color:LightGrey;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Sentiment Predicted:"}</h1>', unsafe_allow_html=True)
+                if a == 'Positive':
+                    st.markdown(f'<h1 style="color:#33ff33;text-align:center;font-size:24px;">{"Positive"}</h1>', unsafe_allow_html=True)
+                      
+                elif a == 'Negative':
+                    st.markdown(f'<h1 style="color:#ff0000;text-align:center;font-size:24px;">{"Negative"}</h1>', unsafe_allow_html=True)
+                    
+            with col2:
+                components.html(source_code, width=450, height=1200,scrolling=True)
+            with col3:
+                st.write(' ')
 
             st.markdown(f'<div style="background-color:LightBlue;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Topic(s) Mentioned:"}</h1>', unsafe_allow_html=True)
             y_pred = topic_model.predict([user_input])[0]
