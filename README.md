@@ -6,7 +6,7 @@ Objectives of the project: -
 
 1.	To uncover hidden patterns or trends from the hotel reviews.
 2.	To present a user friendly and interactive dashboard, which could be utilized by hotel managers to easily identify key information from the hotel reviews.
-3.	To categorize hotel reviews based on their individual sentiment polarity, then, use a variety of machine learning sentiment classification algorithms to see how the subjectivity of reviews affects the algorithms' performance.
+3.	To implement a variety of machine learning sentiment classification algorithms to see how the subjectivity of reviews affects the algorithms' performance.
 4.	To extract and identify the most discussed subjects in the hotel reviews using Latent Dirichlet Allocation (LDA) topic modelling.
 5.	To perform multi-label topic classification on the hotel reviews, using the topic keywords identified from topic modelling as the model training input.
 
