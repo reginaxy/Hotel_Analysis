@@ -106,7 +106,7 @@ def main():
             with col1:
                 st.write(' ')
             with col2:
-                components.html(white_background + source_code, width=450, height=1000,scrolling=True)
+                components.html(white_background + source_code, width=450, height=1100,scrolling=True)
             with col3:
                 st.write(' ')
 
