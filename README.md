@@ -1,5 +1,5 @@
 # 515k Hotel Customer Reviews Analysis
-
+The dataset is obtained from Kaggle. This dataset contains 515,000 rows and scoring of 1493 luxury hotels across Europe. 
 Data Source: https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe
 
 Objectives of the project: -
@@ -9,3 +9,11 @@ Objectives of the project: -
 3.	To categorize hotel reviews based on their individual sentiment polarity, then, use a variety of machine learning sentiment classification algorithms to see how the subjectivity of reviews affects the algorithms' performance.
 4.	To extract and identify the most discussed subjects in the hotel reviews using Latent Dirichlet Allocation (LDA) topic modelling.
 5.	To perform multi-label topic classification on the hotel reviews, using the topic keywords identified from topic modelling as the model training input.
+
+
+## Techniques:
+- Data Visualization
+- Sentiment Analysis
+- Topic Modelling
+- Multi-label Topic Classification
+
