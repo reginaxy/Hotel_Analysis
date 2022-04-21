@@ -10,6 +10,18 @@ from PIL import Image
 import lime
 from lime.lime_text import LimeTextExplainer
 
+# Add CSS
+st.markdown(
+    """
+    <style>
+    .main{
+    background-color: 	#0000FF
+    }   
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 def main():
 
     st.set_option('deprecation.showPyplotGlobalUse', False)
