@@ -2,7 +2,7 @@
 The dataset is obtained from Kaggle. This dataset contains 515,000 rows and scoring of 1493 luxury hotels across Europe. 
 Data Source: https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe
 
-Objectives of the project: -
+## Objectives of the project: -
 
 1.	To uncover hidden patterns or trends from the hotel reviews.
 2.	To present a user friendly and interactive dashboard, which could be utilized by hotel managers to easily identify key information from the hotel reviews.
