@@ -102,12 +102,12 @@ def main():
             exp.save_to_file('topic.html', text=False)
             HtmlFile = open("topic.html", 'r', encoding='utf-8')
             source_code = HtmlFile.read() 
-#             print(source_code)
+            white_background = "<style>:root {background-color: white;}</style>"
             col1, col2, col3 = st.columns(3)
             with col1:
                 st.write(' ')
             with col2:
-                components.html(source_code, width=450, height=1200,scrolling=True)
+                components.html(white_background + source_code, width=450, height=1200,scrolling=True)
             with col3:
                 st.write(' ')
 
