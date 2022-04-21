@@ -1,4 +1,4 @@
-# Hotel_Analysis
+# 515k Hotel Customer Reviews Analysis
 
 Data Source: https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe
 
