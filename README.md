@@ -1,8 +1,10 @@
 # 515k Hotel Customer Reviews Analysis
 The dataset is obtained from Kaggle. This dataset contains 515,000 rows and scoring of 1493 luxury hotels across Europe. 
-Data Source: https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe
+Data Source: 
+https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe
 
-Datasets (Original & Pre-processed) can be accessed here: https://drive.google.com/drive/u/1/folders/1in-eGLjlcntla0CjbxQYNNfbI1UKGQnM
+Datasets (Original & Pre-processed) can be accessed here: 
+https://drive.google.com/drive/u/1/folders/1in-eGLjlcntla0CjbxQYNNfbI1UKGQnM
 
 ## Objectives of the project: 
 
