@@ -22,7 +22,6 @@ def main():
 
     if page == "About the Project":
         st.markdown(f'<h1 style="color:#000000;text-align: center;background-color: white;font-size:45px;">{"About the Project"}</h1>', unsafe_allow_html=True)
-        st.markdown(f'<h1 style="color:#000000;text-align: center;background-color: white;font-size:24px;">{"Problem Statement"}</h1>', unsafe_allow_html=True)
  
         st.write("With the rich amount of information that can be captured through customer reviews, it would be a huge loss if hotel managers chooses to ignore them.\
         By conducting a detailed analysis on the customer reviews, it may present a wider picture about the hotel’s brand, and guarantees that the 'small things' \
@@ -33,24 +32,24 @@ def main():
         analyse and discover anomalies, trends or patterns by going through every single one of them. Hence, the introduction of certain tools, techniques, and expertise \
         would be able to accelerate this time consuming process.") 
         
-        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Dataset Selected"}</h1>', unsafe_allow_html=True)
+        st.markdown(f'<h1 style="color:#000000;text-align: center;background-color: white;font-size:24px;">{"Dataset Selected"}</h1>', unsafe_allow_html=True)
 
         st.write("**Link:** https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe")
         
-        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Data Analytics Process"}</h1>', unsafe_allow_html=True)
+        st.markdown(f'<h1 style="color:#000000;text-align: center;background-color: white;font-size:24px;">{"Data Analytics Process"}</h1>', unsafe_allow_html=True)
         image = Image.open("streamlit_template/FYP Data Pipeline (2).png")
         st.image(image, caption='Data Analytics Process')
 
 
     elif page == "Power BI Dashboard":
-        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:45px;">{"Power BI Dashboard 📊"}</h1>', unsafe_allow_html=True)
+        st.markdown(f'<h1 style="color:#000000;text-align: center;background-color: white;font-size:45px;">{"Power BI Dashboard 📊"}</h1>', unsafe_allow_html=True)
         link='Link to original dashboard: [click here](https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)'
         st.markdown(link,unsafe_allow_html=True)
         st.markdown('<iframe title="Hotel (Web version) plus" width="700" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiOGM0NDBlYzEtN2RhZS00YjljLTg2NDMtMDY3YTkyM2QzZDg4IiwidCI6IjBmZWQwM2EzLTQwMmQtNDYzMy1hOGNkLThiMzA4ODIyMjUzZSIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>', unsafe_allow_html = True)     
 
      
     elif page == "Sentiment & Topic Classifier":
-      st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:45px;">{"Sentiment & Topic Classifier 😄🙁"}</h1>', unsafe_allow_html=True)
+      st.markdown(f'<h1 style="color:#000000;text-align: center;background-color: white;font-size:45px;">{"Sentiment & Topic Classifier 😄🙁"}</h1>', unsafe_allow_html=True)
         
       sent_model = pickle.load(open('streamlit_template/LR_SentAnalysis_IMPROVED.sav' , 'rb'))
       topic_model = pickle.load(open('streamlit_template/LR_Topic_Label.sav' , 'rb'))
