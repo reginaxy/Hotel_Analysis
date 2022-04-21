@@ -21,8 +21,8 @@ def main():
     page = st.sidebar.radio("Choose a page", ["About the Project", "Power BI Dashboard", "Sentiment & Topic Classifier"])
 
     if page == "About the Project":
-        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:45px;">{"About the Project"}</h1>', unsafe_allow_html=True)
-        st.markdown(f'<h1 style="color:#000000;text-align: center;font-size:24px;">{"Problem Statement"}</h1>', unsafe_allow_html=True)
+        st.markdown(f'<h1 style="color:#000000;text-align: center;background-color: white;font-size:45px;">{"About the Project"}</h1>', unsafe_allow_html=True)
+        st.markdown(f'<h1 style="color:#000000;text-align: center;background-color: white;font-size:24px;">{"Problem Statement"}</h1>', unsafe_allow_html=True)
  
         st.write("With the rich amount of information that can be captured through customer reviews, it would be a huge loss if hotel managers chooses to ignore them.\
         By conducting a detailed analysis on the customer reviews, it may present a wider picture about the hotel’s brand, and guarantees that the 'small things' \
