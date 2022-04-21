@@ -10,18 +10,6 @@ from PIL import Image
 import lime
 from lime.lime_text import LimeTextExplainer
 
-# Add CSS
-st.markdown(
-    """
-    <style>
-    .main{
-    background-color: 	#FFFFFF
-    }   
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 def main():
 
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -88,8 +76,8 @@ def main():
             exp.save_to_file('lime.html')
             HtmlFile = open("lime.html", 'r', encoding='utf-8')
             source_code = HtmlFile.read() 
-#            print(source_code)
-            components.html(source_code, width=700, height=500, scrolling=True)
+            white_background = "<style>:root {background-color: white;}</style>"
+            components.html(white_background + source_code, width=700, height=500, scrolling=True)
 
 
             st.markdown(f'<div style="background-color:LightBlue;padding:2px"><h1 style="color:#000000;text-align: center;font-size:24px;">{"Topic(s) Mentioned:"}</h1>', unsafe_allow_html=True)
