@@ -21,4 +21,5 @@ Data Source: https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe
 1. A sentiment classification model
 2. A multi-label topic classification model
 3. An interactive dashboard using Power BI
+
 Link: https://share.streamlit.io/reginaxy/hotel_analysis/main
